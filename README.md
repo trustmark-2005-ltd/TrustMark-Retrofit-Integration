@@ -216,6 +216,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - siteAccessNotes                 | Optional string |
 | - statutoryLimitations            | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
 | - statutoryLimitationsComment     | Optional string |
+| - isPublic     | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
 
 
 
@@ -223,7 +224,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 
 > GET /Data/Assessment
 
-Allows you to access and retrieve an existing Retrofit Assessment and starting RdSAP file.
+Allows you to access and retrieve an existing Retrofit Assessment and starting RdSAP file that has been submitted with the isPublic permission as true by the Assessor.
 
 You must have a valid AssessmentReference and Postcode to successfully pull back an existing Retrofit Assessment.
 
