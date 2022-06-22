@@ -56,6 +56,8 @@ The RIAPI focuses on allowing Assessment, Project and Lodgement data to be submi
 
 File uploads can be preloaded and attached during submission of the Assessment, Project, Lodgement and also as a standalone Supporting Document attaching to an existing Project. See [FileUploadToken](#fileuploadtoken)
 
+Lodged Measures can be amended when needed using the [LodgementAmend](#lodgementamend)
+
 ### Version
 
 A version value of `2022-04-01` should be supplied.
@@ -477,6 +479,28 @@ You will need an existing LodgementId in order to do this.
 | lodgementId                       | String containing a valid LodgementId to attach this file to
 | MeasureId                         | Optional string to associate the file directly to a measure
 
+#### LodgementAmend
+
+> PUT /Data/LodgementAmend
+
+Performs an amend to existing lodged measures. This will also reissue the certificate and incur charges.
+
+You will need an existing ProjectReference and LodgementId in order to do this.
+
+| Field                             | Information                              |
+| --------------------------------- | ---------------------------------------- |
+| projectReference                  | The project reference of the Project for this Lodgement to be associated with |
+| lodgementId                       | String containing a valid LodgementId to attach this file to
+| measures []                       | Array of measures installed |
+| - umr                             | String the measure to amend |
+| - workTypeCode                    | Value from the taxonomy [MeasureTypes](#measuretypes) |
+| - freeTextDetails                 | String that will appear on the certificate |
+| - installedDate                   |  |
+| - handoverDate                    |  |
+| - workCarriedOutByTMLN            | The TMLN of the registered business that carried out the work |
+| - workCarriedOutBySchemeId        | The TrustMark Scheme Provider schemeId for the installer of this work |
+
+
 ### Taxonomies
 
 #### CombustionVentilationAcceptableTypes
@@ -650,6 +674,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [Project Example](./ReadmeIntegration-example-project.md)
 
 * [Lodgement Example](./ReadmeIntegration-example-lodgement.md)
+
+* [LodgementAmend Example](./ReadmeIntegration-example-lodgementamend.md)
 
 
 ## Postman Examples
