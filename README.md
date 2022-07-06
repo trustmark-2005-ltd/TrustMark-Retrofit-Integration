@@ -279,7 +279,6 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - locations [] | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
 | - repairCost |  |
 | - resolutionBeforeRetrofit | Must or Can |
-| - destructiveTestsConducted | Optional string |
 | - hasEvidence | true / false |
 | - actualRepairCost |  |
 | - toBeAddressedInProject | true / false |
