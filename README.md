@@ -1,6 +1,6 @@
 # TrustMark Retrofit Integration
 
-Draft April 22
+First Published April 22
 
 > Supporting [Sandbox Swagger](https://api.sandbox.retrofitintegration.data-hub.org.uk/swagger/index.html)
 
@@ -21,6 +21,7 @@ The TrustMark Retrofit.IntegrationApi (RIAPI) allows users to integrate with the
 * To complete a project an updated RdSAP xml must be provided.
 
 Additional supporting documentation such as the Data Dictionary and Structured Data Model will be published at https://www.trustmark.org.uk/data-warehouse
+ECO 4 specific information can be found at: https://www.trustmark.org.uk/tradespeople/eco4
 
 ### Principles
 
@@ -682,3 +683,10 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 An example collection is available to import, copy this link `https://www.getpostman.com/collections/5507b8404d64566f477c` and use the 'Import From Link' feature in Postman. Once imported update the variables in the API Collection with your own tm-api-key as mentioned in [Identity](#identity)
 
 If you don't have Postman installed, you can get a copy here https://www.postman.com
+
+## Integration Testing
+
+Before access to live API keys can be granted, integrators must sign a Data Sharing Agreement and successfully complete testing of their integration. 
+The document below provides an overview of core testing scenarios and includes the declarations that must be built into your application and evidenced.
+http://trustmark.org.uk/docs/default-source/data-warehouse/retrofit-api-testcases
+
