@@ -615,7 +615,13 @@ Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.me
 
 > GET /Taxonomies/MeasureTypes
 
-Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request. To filter for ECO4 only check the property eco4Name has a value, or use [MeasureTypesECO4](#measuretypeseco4) instead to get a filtered list.
+
+#### MeasureTypesECO4
+
+> GET /Taxonomies/MeasureTypesECO4
+
+Returns a list of ECO4 only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
 
 #### SchemeOptions
 
@@ -686,7 +692,7 @@ If you don't have Postman installed, you can get a copy here https://www.postman
 
 ## Integration Testing
 
-Before access to live API keys can be granted, integrators must sign a Data Sharing Agreement and successfully complete testing of their integration. 
+Before access to live API keys can be granted, integrators must sign a Data Sharing Agreement and successfully complete testing of their integration.
 The document below provides an overview of core testing scenarios and includes the declarations that must be built into your application and evidenced.
 http://trustmark.org.uk/docs/default-source/data-warehouse/retrofit-api-testcases
 
