@@ -28,7 +28,8 @@
         "hasEvidence": true,
         "evidenceImageFileUploadTokens": [
           "string"
-        ]
+        ],
+        "yourReference": "ABC"
       }
     ],
     "occupancy": {
