@@ -194,6 +194,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - destructiveTestsConducted       | Optional string |
 | - hasEvidence                     | true / false |
 | - evidenceImageFileUploadTokens   | Optional array of strings containing fileUploadToken values |
+| - yourReference                   | Optional string to identity this defect
 | occupancy                         |  |
 | - typicalOccupancy                | true / false |
 | - occupancyNotes                  | Optional string |
