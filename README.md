@@ -697,3 +697,10 @@ Before access to live API keys can be granted, integrators must sign a Data Shar
 The document below provides an overview of core testing scenarios and includes the declarations that must be built into your application and evidenced.
 http://trustmark.org.uk/docs/default-source/data-warehouse/retrofit-api-testcases
 
+## Third Party Lodgement Permission
+To lodge work as a Software Provider on behalf on a TrustMark Registered Business they must give you permission to lodge on their behalf. This can be achieved by:
+- Logging into your retrofit portal account and retrieving your Retrofit Account Id.
+- Providing it to the TrustMark Business 
+- They log into their portal and enter the Retrofit Account Id in the 'Third Party Access' tab and 'Grant Access'
+
+
