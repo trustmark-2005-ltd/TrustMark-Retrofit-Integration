@@ -413,6 +413,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteeName | Value from the taxonomy [GuaranteeTypes](#guaranteetypes) |
 | - guaranteeStartDate |  |
 | - guaranteePolicyReference |  |
+| - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
 | workInvoiceTotal |  |
 
 ### ProjectComplete
