@@ -673,6 +673,12 @@ RdSAP files are required at Assessment and Project Completion stages. The xml co
 
 TrustMark is not responsible for external websites and their functionality or security, we advise that only non-personal test data is used with any of the tools listed.
 
+## MCS Measures and Testing
+
+In order to use MCS measures you must provide an MCS Certificate Reference that can be validated. Therefore, the certificate reference must exist in the MCS Testing Database and the returned certificate must have a matching property postcode and technology.
+
+`MCS-01109079-R` is a valid testing mcsCertificateReference value and must match against a postcode of `IP7 6RL` and an MCS technology of `2`, for example `DW-305` would be a valid measure type.
+
 ## Visualising
 
 If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvisio.com/editor) illustrates data on graphs well and can help with the understanding of the Assessment, Project and Lodgement requests.
@@ -701,7 +707,7 @@ http://trustmark.org.uk/docs/default-source/data-warehouse/retrofit-api-testcase
 ## Third Party Lodgement Permission
 To lodge work as a Software Provider on behalf on a TrustMark Registered Business they must give you permission to lodge on their behalf. This can be achieved by:
 - Logging into your retrofit portal account and retrieving your Retrofit Account Id.
-- Providing it to the TrustMark Business 
+- Providing it to the TrustMark Business
 - They log into their portal and enter the Retrofit Account Id in the 'Third Party Access' tab and 'Grant Access'
 
 
