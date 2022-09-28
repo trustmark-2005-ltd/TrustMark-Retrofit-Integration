@@ -316,6 +316,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | -  - repaymentYears |  |
 | -  - annualCO2Savings |  |
 | -  - carbonCostEffectiveness |  |
+| -  - sapSavings | Decimal range 0-100. Mandatory when the `measureEligibilityStatus` is 'Eligible' |
 | - intendedOutcomes |  |
 | - - reductionEnergyUse | true / false |
 | - - reductionInEnergyCosts | true / false |
