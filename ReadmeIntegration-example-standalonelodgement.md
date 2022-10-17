@@ -45,17 +45,10 @@
       "ownerAlternativeContactNumber": "string",
       "ownerEmail": "string"
     },
-    "paymentReference": "string",
-    "trustmarkBusinessId": "string",
-    "schemeBusinessId": "string",
-    "thirdPartyName": "string",
     "lodgementType": "LICENCEPLUS",
-    "ownerRetrofitAccountId": "string",
     "ownerTMLN": "10000",
-    "ownerName": "string",
     "workInvoiceTotal": 0,
     "schemeId": "string",
-    "schemeName": "string",
     "startingRatingEPC": "D",
     "startingRRNEPC": "0000-0000-0000-0000-0000",
     "completionRatingEPC": "C",
@@ -64,7 +57,6 @@
     "confidenceLevel": 0,
     "measures": [
       {
-        "improvementOptionEvaluationMeasureReference": "ioem1",
         "workTypeCode": "DW-101",
         "freeTextDetails": "string",
         "percentageMeasureInstalled": "Yes",

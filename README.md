@@ -503,6 +503,79 @@ You will need an existing ProjectReference and LodgementId in order to do this.
 | - workCarriedOutByTMLN            | The TMLN of the registered business that carried out the work |
 | - workCarriedOutBySchemeId        | The TrustMark Scheme Provider schemeId for the installer of this work |
 
+#### StandaloneLodgementSubmit
+
+> POST /Data/StandaloneLodgementSubmit
+
+Creates a project and lodgement submission in a single API call.
+
+| Field                             | Information                              |
+| --------------------------------- | ---------------------------------------- |
+| yourProjectReference              | Your reference for the project |
+| address                           |  |
+| - number                          |  |
+| - name                            |  |
+| - flatNameNumber                  |  |
+| - postcode                        |  |
+| - uprn                            |  |
+| - address1                        |  |
+| - address2                        |  |
+| - address3                        |  |
+| - city                            |  |
+| - county                          |  |
+| - country                         |  |
+| - town                            |  |
+| tenure                            |  |
+| - premisesTenure                  | Value from the taxonomy [TenureTypes](tenuretypes) |
+| - residentName                    |  |
+| - residentContactNumber           |  |
+| - residentAlternativeContactNumber |  |
+| - ownerName                       |  |
+| - ownerContactNumber              |  |
+| - ownerAlternativeContactNumber   |  |
+| - ownerEmail                      | This will be used to distribute certificates |
+| propertyInformation               |  |
+| - propertyType                    | Value from the taxonomy [PropertyTypes](#propertytypes)  |
+| - propertyDetachment              | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
+| - propertyAge                     | Value from the taxonomy [PropertyAgeTypes](#propertyagetypes) |
+| - propertyConstruction            | Value from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
+| - propertyBedrooms                | Value from the taxonomy PropertyBedroomTypes |
+| measures []                       | Array of measures installed |
+| - workTypeCode                    | Value from the taxonomy [MeasureTypes](#measuretypes) |
+| - freeTextDetails                 | String that will appear on the certificate |
+| - percentageMeasureInstalled      | `Yes` or `No` if 100% measures have been installed |
+| - installerReferenceNumber        |  |
+| - installedDate                   |  |
+| - handoverDate                    |  |
+| - workCarriedOutByTMLN            | The TMLN of the registered business that carried out the work |
+| - workCarriedOutBySchemeId        | The TrustMark Scheme Provider schemeId for the installer of this work |
+| - installerPasCertificateNumber   |  |
+| - operativeName                   |  |
+| - isInnovationMeasure             | true / false |
+| - innovationMeasureProduct        | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) |
+| - productManufacturer             |  |
+| - productModel                    |  |
+| - productVersion                  |  |
+| - productSerialNumber             |  |
+| - productWarrantyDuration         |  |
+| - financialProtectionCategory     |  |
+| - guaranteeName                   | Value from the taxonomy [GuaranteeTypes](#guaranteetypes) |
+| - guaranteeStartDate              |  |
+| - guaranteePolicyReference        |  |
+| - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
+| supportingDocumentAttachments     |  |
+| - fileUploadToken                 | String as created [FileUploadToken](#fileuploadtoken) |
+| - filename                        | Filename string provided to create the fileUploadToken |
+| - documentType                    | Value from the taxonomy [DocumentTypes](#documenttypes) |
+| - comments                        | Optional string |
+| startingRatingEPC                 | 'A', 'B', 'C', 'D', 'E', 'F', or 'G' |
+| startingRRNEPC                    | 24 character long RRN number including the dashes |
+| completionRatingEPC               | 'A', 'B', 'C', 'D', 'E', 'F', or 'G' |
+| completionRRNEPC                  | 24 character long RRN number including the dashes |
+| schemeId                          | Value from the taxonomy [SchemeOptions](#schemeoptions), this must also be valid registration with the TMLN |
+| ownerTMLN                         | The TMLN of the owner of this Lodgement |
+| lodgementType                     | 'LICENCEPLUS' or 'LICENCEPLUSWALES' |
+| workInvoiceTotal                  |  |
 
 ### Taxonomies
 
