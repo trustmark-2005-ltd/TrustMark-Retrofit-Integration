@@ -450,6 +450,23 @@ The Supporting Document allows for multiple documents to be associated with a Pr
 
 There are two different endpoints for each of these actions.
 
+#### Supported File Extensions
+
+A 403 Forbidden error will be returned if attempting to upload a file with an extension not in the following list:
+
+* jpg
+* jpeg
+* png
+* gif
+* pdf
+* txt
+* doc
+* docx
+* xls
+* xlsx
+* xml
+* msg
+
 #### Project
 
 > POST /Data/SupportingDocument/Project
@@ -765,6 +782,7 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 
 * [LodgementAmend Example](./ReadmeIntegration-example-lodgementamend.md)
 
+* [StandaloneLodgement Example](./ReadmeIntegration-example-standalonelodgement.md)
 
 ## Postman Examples
 
