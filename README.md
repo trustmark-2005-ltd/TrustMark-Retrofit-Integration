@@ -524,7 +524,7 @@ You will need an existing ProjectReference and LodgementId in order to do this.
 
 > POST /Data/StandaloneLodgementSubmit
 
-Creates a project and lodgement submission in a single API call.
+Creates a project and single lodgement submission in a single API call. This is suitable for TrustMark Licence Plus where all measures are lodged together.
 
 | Field                             | Information                              |
 | --------------------------------- | ---------------------------------------- |
