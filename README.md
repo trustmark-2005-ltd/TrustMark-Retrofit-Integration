@@ -594,6 +594,53 @@ Creates a project and lodgement submission in a single API call.
 | lodgementType                     | 'LICENCEPLUS' or 'LICENCEPLUSWALES' |
 | workInvoiceTotal                  |  |
 
+### ProjectCertificate
+
+> POST /Data/ProjectCertificate
+
+Retrieve the generated certificate for a completed project. Can only be retrieved for projects created using the same identity.
+
+The body looks like this and all you need to supply in the request is the project reference.
+
+```json
+{
+  "version": "2022-04-01",
+  "identity": {
+    "trustmarkId": "api-e5b3e97b-b95e-467f-b082-60fcab47ec6d"
+  },
+  "clientRequestToken" : "8dfb4810-596c-4a52-9910-27de7a1e8bac",
+  "request": {
+    "projectReference": "P1001"
+  }
+}
+```
+
+The response is the pdf file with mime type application/pdf.
+
+### LodgementCertificate
+
+> POST /Data/LodgementCertificate
+
+Retrieve the generated certificate for a completed lodgement. Can only be retrieved for lodgements created using the same identity.
+
+The body looks like this and all you need to supply in the request is the project reference and the lodgementId.
+
+```json
+{
+  "version": "2022-04-01",
+  "identity": {
+    "trustmarkId": "api-e5b3e97b-b95e-467f-b082-60fcab47ec6d"
+  },
+  "clientRequestToken" : "8dfb4810-596c-4a52-9910-27de7a1e8bac",
+  "request": {
+    "projectReference": "P1001",
+    "lodgementId": "lod-00000000-0000-0000-0000-000000000000"
+  }
+}
+```
+
+The response is the pdf file with mime type application/pdf.
+
 ### Taxonomies
 
 #### CombustionVentilationAcceptableTypes
