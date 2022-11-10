@@ -416,6 +416,12 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteePolicyReference |  |
 | - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
 | workInvoiceTotal |  |
+| supportingDocumentAttachments |  |
+| - fileUploadToken | String as created [FileUploadToken](#fileuploadtoken) |
+| - filename | Filename string provided to create the fileUploadToken |
+| - documentType | Value from the taxonomy [DocumentTypes](#documenttypes) |
+| - comments | Optional string |
+| - measureReference | Optional string value to attach the document directly to a measure |
 
 ### ProjectComplete
 
