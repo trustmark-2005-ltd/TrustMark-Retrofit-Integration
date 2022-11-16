@@ -184,16 +184,17 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | rdSAPFileContent                  | The full RdSAP xml file content |
 | ownerTMLN                         | The TMLN of the owner of this Assessment who lodged the Assessment |
 | assessorTMLN                      | The TMLN of the Retrofit Assessor who conducted the Assessment |
+| assessorSchemeId                  | A valid SchemeId the assessor is registered with to lodge this Assessment |
 | defects []                        | Contains an array of any defects that have been identified |
 | - defectType                      | Value from the taxonomy [DefectTypes](#defecttypes) |
 | - comment | Optional string       |
 | - severity                        | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
-| - locations                       | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
+| - locations []                    | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
 | - repairCost                      |  |
 | - resolutionBeforeRetrofit        | Must or Can |
 | - destructiveTestsConducted       | Optional string |
 | - hasEvidence                     | true / false |
-| - evidenceImageFileUploadTokens   | Optional array of strings containing fileUploadToken values |
+| - evidenceImageFileUploadTokens []| Optional array of strings containing fileUploadToken values |
 | - yourReference                   | Optional string to identity this defect
 | occupancy                         |  |
 | - typicalOccupancy                | true / false |
@@ -215,10 +216,10 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - exposureZone                    | Value from the taxonomy [ExposureZoneTypes](#exposurezonetypes) |
 | - planningConstraints             | true / false |
 | - planningComments                | Required if planningConstraints is true |
-| - propertyConstruction            | Array of values from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
+| - propertyConstruction []         | Array of values from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
 | - propertyDetachment              | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
 | - siteAccessNotes                 | Optional string |
-| - statutoryLimitations            | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
+| - statutoryLimitations []         | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
 | - statutoryLimitationsComment     | Optional string |
 | - isPublic     | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
 
@@ -267,7 +268,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - propertyType | Value from the taxonomy [PropertyTypes](#propertytypes)  |
 | - propertyDetachment | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
 | - propertyAge | Value from the taxonomy [PropertyAgeTypes](#propertyagetypes) |
-| - propertyConstruction | Value from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
+| - propertyConstruction [] | Array of values from the taxonomy [PropertyConstructionTypes] |
 | - propertyBedrooms | Value from the taxonomy PropertyBedroomTypes |
 | assessmentDefects [] | Array of assessment defects being covered in the project |
 | - defectId | The defectId as listed in the Assessment |
@@ -310,12 +311,12 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | -  - workTypeCode | Value from the taxonomy [MeasureTypes](#measuretypes) |
 | -  - product |  |
 | -  - measureEligibilityStatus | Value from the taxonomy [MeasureEligibilityStatusTypes](#measureeligibilitystatustypes) |
-| -  - measureInstallationCost |  |
-| -  - annualFuelCostSaving |  |
-| -  - potentialEnergyRating |  |
-| -  - repaymentYears |  |
-| -  - annualCO2Savings |  |
-| -  - carbonCostEffectiveness |  |
+| -  - measureInstallationCost | Decimal of the install cost |
+| -  - annualFuelCostSaving | Decimal of the annual fuel cost saving |
+| -  - potentialEnergyRating | Number of the potential energy rating  |
+| -  - repaymentYears | Decimal of the number of years to repay |
+| -  - annualCO2Savings | Decimal of the CO2 Savings |
+| -  - carbonCostEffectiveness | Decimal of the carbon cost effectiveness |
 | -  - sapSavings | Decimal range 0-100. Mandatory when the `measureEligibilityStatus` is 'Eligible' |
 | - intendedOutcomes |  |
 | - - reductionEnergyUse | true / false |
@@ -347,7 +348,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - stageDurationInWeeks |  |
 | - - keyEventComments |  |
 | - - inScopeCurrentProject |  |
-| - - improvementOptionEvaluationMeasureReferences | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
+| - - improvementOptionEvaluationMeasureReferences [] | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
 | riskAssessment |  |
 | - declaredProjectRisk | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
 | - highestRiskCombination | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
@@ -356,7 +357,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - designerTMLN | The TMLN of the Designer, required if `isRegisteredWithTrustmark`  |
 | - designerName | String required if not `isRegisteredWithTrustmark` |
 | - designerQualification | Value from the taxonomy [DesignerQualificationTypes](#designerqualificationtypes)  |
-| - improvementOptionEvaluationMeasureReferences | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
+| - improvementOptionEvaluationMeasureReferences [] | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
 | - ventilationTreatmentType | Value from the taxonomy [VentilationTreatmentTypes](#ventilationtreatmenttypes) |
 | - thermalBridgeRiskPresent | true / false |
 | - thermalBridgeActionDescription | Required if `thermalBridgeRiskPresent` |
@@ -368,14 +369,14 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - ventilationTreatmentStrategy | Value from the taxonomy [VentilationTreatmentStrategyTypes](#ventilationtreatmentstrategytypes) |
 | - ventilationStrategyNotes |  |
 | roles |  |
-| - installerTMLNs | Array of any TMLN of installers to be used |
+| - installerTMLNs [] | Array of any TMLN of installers to be used |
 | - evaluatorTMLN | TMLN of the Evaluator |
-| supportingDocumentAttachments |  |
+| supportingDocumentAttachments [] | Array of supporting documents  |
 | - fileUploadToken | String as created [FileUploadToken](#fileuploadtoken) |
 | - filename | Filename string provided to create the fileUploadToken |
 | - documentType | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | Optional string |
-| notes | Optional array of strings |
+| notes [] | Optional array of strings |
 
 
 ### LodgementSubmit
@@ -416,12 +417,12 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteePolicyReference |  |
 | - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
 | workInvoiceTotal |  |
-| supportingDocumentAttachments |  |
+| supportingDocumentAttachments [] | Array of supporting documents |
 | - fileUploadToken | String as created [FileUploadToken](#fileuploadtoken) |
 | - filename | Filename string provided to create the fileUploadToken |
 | - documentType | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | Optional string |
-| - measureReference | Optional string value to attach the document directly to a measure |
+| - measureReference | Optional string. Map a document directly to a measure by providing the `improvementOptionEvaluationMeasureReference` from the measures array |
 
 ### ProjectComplete
 
@@ -586,7 +587,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - guaranteeStartDate              |  |
 | - guaranteePolicyReference        |  |
 | - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
-| supportingDocumentAttachments     |  |
+| supportingDocumentAttachments []  | Array of supporting documents |
 | - fileUploadToken                 | String as created [FileUploadToken](#fileuploadtoken) |
 | - filename                        | Filename string provided to create the fileUploadToken |
 | - documentType                    | Value from the taxonomy [DocumentTypes](#documenttypes) |
@@ -621,7 +622,7 @@ The body looks like this and all you need to supply in the request is the projec
 }
 ```
 
-The response is the pdf file with mime type application/pdf.
+The response is the pdf file as Base64 with mime type application/pdf.
 
 ### LodgementCertificate
 
@@ -645,7 +646,7 @@ The body looks like this and all you need to supply in the request is the projec
 }
 ```
 
-The response is the pdf file with mime type application/pdf.
+The response is the pdf file as Base64 with mime type application/pdf.
 
 ### Taxonomies
 
@@ -842,6 +843,10 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 An example collection is available to import, copy this link `https://www.getpostman.com/collections/5507b8404d64566f477c` and use the 'Import From Link' feature in Postman. Once imported update the variables in the API Collection with your own tm-api-key as mentioned in [Identity](#identity)
 
 If you don't have Postman installed, you can get a copy here https://www.postman.com
+
+## Certificates
+
+Certificates will be returned as Base64 - https://base64.guru/converter/decode/file and when decoded a PDF.
 
 ## Integration Testing
 

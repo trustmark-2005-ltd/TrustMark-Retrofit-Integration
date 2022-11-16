@@ -14,6 +14,7 @@
     "ownerTMLN": "10000",
     "rdSAPFileContent": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RdSAP-Report xmlns ..... <\/RdSAP-Report>",
     "assessorTMLN": "10000",
+    "assessorSchemeId": "testscheme",
     "defects": [
       {
         "defectType": "Leaks",
