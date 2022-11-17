@@ -404,6 +404,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - workCarriedOutBySchemeId | The TrustMark Scheme Provider schemeId for the installer of this work |
 | - installerPasCertificateNumber |  |
 | - operativeName |  |
+| - operativeCertificationReference |  |
 | - isInnovationMeasure | true / false |
 | - innovationMeasureProduct | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) |
 | - productManufacturer |  |
@@ -575,6 +576,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - workCarriedOutBySchemeId        | The TrustMark Scheme Provider schemeId for the installer of this work |
 | - installerPasCertificateNumber   |  |
 | - operativeName                   |  |
+| - operativeCertificationReference |  |
 | - isInnovationMeasure             | true / false |
 | - innovationMeasureProduct        | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) |
 | - productManufacturer             |  |
