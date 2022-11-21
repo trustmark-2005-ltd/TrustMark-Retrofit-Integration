@@ -254,6 +254,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | fundingComment |  |
 | projectType | Value from the taxonomy [ProjectTypes](#projecttypes) |
 | yourProjectReference | A string containing your unique project reference |
+| localAuthorityProjectPhase | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) for Local Authority projects only |
+| localAuthorityProjectKey | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) for Local Authority projects only |
 | tenure |  |
 | - premisesTenure | Value from the taxonomy [TenureTypes](tenuretypes) |
 | - residentName |  |
@@ -805,6 +807,18 @@ Returns a list of options for `retrofitDesigns.ventilationTreatmentType` in the 
 
 Returns a list of options for `ventilation.ventilationType` in the AssessmentSubmit request.
 
+#### MeasureTypesLADS
+
+> GET /Taxonomies/MeasureTypesLADS
+
+Returns a list of LADS only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+
+#### LocalAuthorityProjectsLADS
+
+> GET /Taxonomies/LocalAuthorityProjectsLADS
+
+Returns a list of LADS only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
+
 ## RdSAP Files
 
 RdSAP files are required at Assessment and Project Completion stages. The xml content of the file must be supplied in the fields, if you are exploring the API and need an online tool to escape characters then https://www.freeformatter.com/json-escape.html works well.
@@ -824,6 +838,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [Assessment Example](./ReadmeIntegration-example-assessment.md)
 
 * [Project Example](./ReadmeIntegration-example-project.md)
+
+* [LADS Project Example](./ReadmeIntegration-example-project-lads.md)
 
 * [Lodgement Example](./ReadmeIntegration-example-lodgement.md)
 
