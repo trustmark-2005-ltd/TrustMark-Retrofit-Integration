@@ -11,15 +11,15 @@
   },
   "clientRequestToken" : "66b174f3-0486-40c1-a2f2-aa61d1cf5525",
   "request": {
-    "assessmentReference": "A1024",
+    "assessmentReference": "A8037",
     "ownerTMLN": "10000",
     "schemeId": "testscheme",
     "fundingOrganisationName": "string",
     "fundingComment": "string",
     "projectType": "LADS",
-    "yourProjectReference": "api16",
-    "localAuthorityProjectPhase": "1a",
-    "localAuthorityProjectKey": "South East",
+    "yourProjectReference": "lads_api_1",
+    "localAuthorityProjectPhase": "1b",
+    "localAuthorityProjectKey": "P_187",
     "tenure": {
       "premisesTenure": "Owner Occupied",
       "residentName": "string",
@@ -98,7 +98,10 @@
             "potentialEnergyRating": 0,
             "repaymentYears": 0,
             "annualCO2Savings": 0,
-            "carbonCostEffectiveness": 0
+            "carbonCostEffectiveness": 0,
+            "sapSavings": 0,
+            "productInstalledUnitOfMeasure": "Items",
+            "productInstalledValue": 1
           }
         ],
         "intendedOutcomes": {
@@ -162,8 +165,7 @@
         "thermalBridgeRiskPresent": true,
         "defectResolutions": [
           {
-            "assessmentDefectId": "6h_rdZ7olzrgOpRD_0mAZ",
-            "projectDefectYourReference": "string",
+            "assessmentDefectId": "My Ref 1",
             "resolution": "string"
           }
         ],
@@ -187,6 +189,36 @@
       {
         "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
         "documentType": "Risk assessment",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Intended outcomes",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Improvement option evaluation",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Medium term improvement plan",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Retrofit design",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Pre-Design Building Survey",
         "comments": "string",
         "filename": "TestRA.pdf"
       }
