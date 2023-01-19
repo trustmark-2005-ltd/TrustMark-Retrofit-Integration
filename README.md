@@ -320,8 +320,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | -  - annualCO2Savings | Decimal of the CO2 Savings |
 | -  - carbonCostEffectiveness | Decimal of the carbon cost effectiveness |
 | -  - sapSavings | Decimal range 0-100. Mandatory when the `measureEligibilityStatus` is 'Eligible' |
-| -  - ProductInstalledUnitOfMeasure | 'Items' or 'm2' required when measureEligibilityStatus is 'Eligible' | 
-| -  - ProductInstalledValue | Numeric value to indicate how many items or m2 of product evaluated |
+| -  - productInstalledUnitOfMeasure | 'Items' or 'm2' required when measureEligibilityStatus is 'Eligible' |
+| -  - productInstalledValue | Numeric value to indicate how many items or m2 of product evaluated |
 | - intendedOutcomes |  |
 | - - reductionEnergyUse | true / false |
 | - - reductionInEnergyCosts | true / false |

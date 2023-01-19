@@ -1,5 +1,5 @@
 
-### LADS Project Example
+### SHDF Project Example
 
 [Return](./ReadmeIntegration.md)
 
