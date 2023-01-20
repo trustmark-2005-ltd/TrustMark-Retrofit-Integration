@@ -593,6 +593,8 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - guaranteeStartDate              |  |
 | - guaranteePolicyReference        |  |
 | - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
+| - whdReplaceWhatMeasure             | Required for lodgementType WHD. Must be a value from taxonomy [WHDReplaceWhatMeasureValues](#whdreplacewhatmeasurevalues) |
+| - whdWorkConducted                  | Required for lodgementType WHD. Must be a value from taxonomy [WHDWorkConductedValues](#whdworkconductedvalues) |
 | supportingDocumentAttachments []  | Array of supporting documents |
 | - fileUploadToken                 | String as created [FileUploadToken](#fileuploadtoken) |
 | - filename                        | Filename string provided to create the fileUploadToken |
@@ -606,6 +608,9 @@ Creates a project and single lodgement submission in a single API call. This is 
 | ownerTMLN                         | The TMLN of the owner of this Lodgement |
 | lodgementType                     | 'LICENCEPLUS' or 'LICENCEPLUSWALES' |
 | workInvoiceTotal                  |  |
+| highRiskQuestions                 | Required for lodgementType WHD. Must contain array of all questions from taxonomy [WHDQuestions](#whdquestions) |
+| - question                        | Question string provided by the taxonomy |
+| - answer                          | Answer string from the potential answer options provided by the taxonomy |
 
 ### ProjectCertificate
 
@@ -853,6 +858,31 @@ Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEv
 > GET /Taxonomies/LocalAuthorityProjectsSHDF
 
 Returns a list of SHDF only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
+
+### WHDWorkConductedValues
+
+> GET /Taxonomies/WHDWorkConductedValues
+
+Returns options for standalone lodgement type WHD to populate `measure.whdWorkConducted`.
+
+### WHDReplaceWhatMeasureValues
+
+> GET /Taxonomies/WHDReplaceWhatMeasureValues
+
+Returns options for standalone lodgement type WHD to populate `measure.whdReplaceWhatMeasure`.
+
+### WHDQuestions
+
+> GET /Taxonomies/WHDQuestions
+
+Returns the list of questions that must be provided for WHD standalone lodgements and the potential answer options.
+
+#### MeasureTypesWHD
+
+> GET /Taxonomies/MeasureTypesWHD
+
+Returns a list of WHD only options for `measure.workTypeCode` in the ProjectStart request.
+
 
 ## RdSAP Files
 
