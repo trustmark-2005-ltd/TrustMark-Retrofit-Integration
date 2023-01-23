@@ -859,19 +859,19 @@ Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEv
 
 Returns a list of SHDF only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
 
-### WHDWorkConductedValues
+#### WHDWorkConductedValues
 
 > GET /Taxonomies/WHDWorkConductedValues
 
 Returns options for standalone lodgement type WHD to populate `measure.whdWorkConducted`.
 
-### WHDReplaceWhatMeasureValues
+#### WHDReplaceWhatMeasureValues
 
 > GET /Taxonomies/WHDReplaceWhatMeasureValues
 
 Returns options for standalone lodgement type WHD to populate `measure.whdReplaceWhatMeasure`.
 
-### WHDQuestions
+#### WHDQuestions
 
 > GET /Taxonomies/WHDQuestions
 
@@ -915,6 +915,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [LodgementAmend Example](./ReadmeIntegration-example-lodgementamend.md)
 
 * [StandaloneLodgement Example](./ReadmeIntegration-example-standalonelodgement.md)
+
+* [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
 ## Postman Examples
 
