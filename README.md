@@ -454,6 +454,8 @@ Voids an existing retrofit project.
 | :-------------------------------- | ---------------------------------------- |
 | projectReference | The reference of the project generated from the ProjectStart call |
 
+Any attempts to void a project on an invalid status will result in a 422 response.
+
 ### SupportingDocument
 
 The Supporting Document allows for multiple documents to be associated with a Project or Lodgement in a single call. The ProjectReference sits in the main body and the request accepts an array of pre-loaded files using [FileUploadToken](#fileuploadtoken)
