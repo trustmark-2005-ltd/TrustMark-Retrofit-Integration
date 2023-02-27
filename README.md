@@ -45,7 +45,7 @@ Payable by the party signing the Data Sharing Agreement.
 
 ### Data
 
-The RIAPI focuses on allowing Assessment, Project and Lodgement data to be submitted at key stages.
+The RIAPI focuses on allowing Assessment, Project and Lodgement data to be submitted at key stages. Sequence numbers (5) and (6) are optional.
 
 
 | Sequence | Area       | Name     | Description                                                                                | Endpoint         |
@@ -54,6 +54,8 @@ The RIAPI focuses on allowing Assessment, Project and Lodgement data to be submi
 | 2        | Project    | [Start](#projectstart)    | Creates a new Retrofit Project using an AssessmentReference, generating a ProjectReference | ProjectStart     |
 | 3        | Lodgement  | [Submit](#lodgementsubmit)   | Create a new Lodgment using a ProjectReference. A lodgement contains one or more measures.                                             | LodgementSubmit  |
 | 4        | Project    | [Complete](#projectcomplete) | Completes the existing Project using a ProjectReference                                    | ProjectComplete  |
+| (5)      | Project    | [Void](#projectvoid) | Voids an inprogress or draft project using a ProjectReference                                  | ProjectVoid  |
+| (6)      | Lodgement  | [Amend](#lodgementamend) | Amends measures in a completed lodgement                              | LodgementAmend  |
 
 File uploads can be preloaded and attached during submission of the Assessment, Project, Lodgement and also as a standalone Supporting Document attaching to an existing Project. See [FileUploadToken](#fileuploadtoken)
 
@@ -442,6 +444,16 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | projectReference | The reference of the project generated from the ProjectStart call |
 | rdSAPFileContent | The full RdSAP xml file content |
 
+### ProjectVoid
+
+> POST /Data/ProjectVoid
+
+Voids an existing retrofit project.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| projectReference | The reference of the project generated from the ProjectStart call |
+
 ### SupportingDocument
 
 The Supporting Document allows for multiple documents to be associated with a Project or Lodgement in a single call. The ProjectReference sits in the main body and the request accepts an array of pre-loaded files using [FileUploadToken](#fileuploadtoken)
@@ -519,11 +531,16 @@ Performs an amend to existing lodged measures. This will also reissue the certif
 
 You will need an existing ProjectReference and LodgementId in order to do this.
 
+The owner of the Project must have enough credit to cover any fees for this transaction.
+
+This endpoint can also add measures if an existing measure has been submitted with the same TrustMarkTradeCode in the LodgementSubmit call. To do this use the `measureId` of the measure that has the same TrustMarkTradeCode, and the value 'TBC' for `umr`.
+
 | Field                             | Information                              |
 | --------------------------------- | ---------------------------------------- |
 | projectReference                  | The project reference of the Project for this Lodgement to be associated with |
 | lodgementId                       | String containing a valid LodgementId to attach this file to
 | measures []                       | Array of measures installed |
+| - measureId                       | Measure id reference assigned from the LodgementSubmit call |
 | - umr                             | String the measure to amend |
 | - workTypeCode                    | Value from the taxonomy [MeasureTypes](#measuretypes) |
 | - freeTextDetails                 | String that will appear on the certificate |
@@ -531,6 +548,9 @@ You will need an existing ProjectReference and LodgementId in order to do this.
 | - handoverDate                    |  |
 | - workCarriedOutByTMLN            | The TMLN of the registered business that carried out the work |
 | - workCarriedOutBySchemeId        | The TrustMark Scheme Provider schemeId for the installer of this work |
+| - productManufacturer |  |
+| - productModel |  |
+| - productVersion |  |
 
 #### StandaloneLodgementSubmit
 
@@ -913,6 +933,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [Lodgement Example](./ReadmeIntegration-example-lodgement.md)
 
 * [LodgementAmend Example](./ReadmeIntegration-example-lodgementamend.md)
+
+* [LodgementAmend Add Measure Example](./ReadmeIntegration-example-lodgementamendadditional.md)
 
 * [StandaloneLodgement Example](./ReadmeIntegration-example-standalonelodgement.md)
 
