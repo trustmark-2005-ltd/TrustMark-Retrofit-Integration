@@ -634,6 +634,8 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - question                        | Question string provided by the taxonomy |
 | - answer                          | Answer string from the potential answer options provided by the taxonomy |
 
+> To obtain the lodgement certificate use the [LodgementCertificate](#lodgementcertificate) call along with the `RetrofitProjectReference` and `LodgementId` provided from this response.
+
 ### ProjectCertificate
 
 > POST /Data/ProjectCertificate
