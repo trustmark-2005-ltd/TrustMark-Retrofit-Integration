@@ -928,6 +928,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 
 * [Project Example](./ReadmeIntegration-example-project.md)
 
+* [GBIS Project Example](./ReadmeIntegration-example-project-gbis.md)
+
 * [LADS Project Example](./ReadmeIntegration-example-project-lads.md)
 
 * [HUG Project Example](./ReadmeIntegration-example-project-hug.md)
