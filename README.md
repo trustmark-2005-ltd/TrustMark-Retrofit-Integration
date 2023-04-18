@@ -404,6 +404,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - freeTextDetails | String that will appear on the certificate |
 | - percentageMeasureInstalled | `Yes` or `No` if 100% measures have been installed |
 | - installerReferenceNumber |  |
+| - customerContribution            | Decimal |
+| - measureCost                     | Decimal |
 | - installedDate |  |
 | - handoverDate |  |
 | - workCarriedOutByTMLN | The TMLN of the registered business that carried out the work |
@@ -423,7 +425,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteeStartDate |  |
 | - guaranteePolicyReference |  |
 | - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
-| workInvoiceTotal |  |
+| workInvoiceTotal                  | Decimal |
+| customerContribution              | Decimal  |
 | supportingDocumentAttachments [] | Array of supporting documents |
 | - fileUploadToken | String as created [FileUploadToken](#fileuploadtoken) |
 | - filename | Filename string provided to create the fileUploadToken |
@@ -596,6 +599,8 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - freeTextDetails                 | String that will appear on the certificate |
 | - percentageMeasureInstalled      | `Yes` or `No` if 100% measures have been installed |
 | - installerReferenceNumber        |  |
+| - customerContribution            | Decimal |
+| - measureCost                     | Decimal |
 | - installedDate                   |  |
 | - handoverDate                    |  |
 | - workCarriedOutByTMLN            | The TMLN of the registered business that carried out the work |
@@ -629,7 +634,8 @@ Creates a project and single lodgement submission in a single API call. This is 
 | schemeId                          | Value from the taxonomy [SchemeOptions](#schemeoptions), this must also be valid registration with the TMLN |
 | ownerTMLN                         | The TMLN of the owner of this Lodgement |
 | lodgementType                     | 'LICENCEPLUS' or 'LICENCEPLUSWALES' |
-| workInvoiceTotal                  |  |
+| workInvoiceTotal                  | Decimal |
+| customerContribution              | Decimal  |
 | highRiskQuestions                 | Required for lodgementType WHD. Must contain array of all questions from taxonomy [WHDQuestions](#whdquestions) |
 | - question                        | Question string provided by the taxonomy |
 | - answer                          | Answer string from the potential answer options provided by the taxonomy |
