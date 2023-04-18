@@ -464,6 +464,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | projectReference | The reference of the project generated from the ProjectStart call |
 | rdSAPFileContent | The full RdSAP xml file content |
 | acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
+| acceptSamePrePostScores | Required to accept warning of same pre and post scores, which will be raised if this POST RdSAP file contains the same or a lower score than the PRE RdSASP file. It could be a valid case so it is not blocking, provide `true` to knowledge and override this warning. This is a precaution to prevent users uploading the incorrect file. Warnings are raised with a 422 response code and response message of `SAME_PRE_AND_POST_SAP_SCORE` or `LOWER_PRE_AND_POST_SAP_SCORE` |
+| acceptAddressCheck | Required to accept address check warning, which will be raised if the Address Line 1 in the POST RdSAP file is different to that in the Started Project. It could be a valid case so it is not blocking, provide `true` to knowledge and override this warning. This is a precaution to prevent users uploading the incorrect file. Warnings are raised with a 422 response code and response message of `ADDRESS_LINE_1_DIFFERENT` |
 
 ### ProjectVoid
 
