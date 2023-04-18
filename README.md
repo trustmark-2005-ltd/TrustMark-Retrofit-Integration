@@ -61,6 +61,23 @@ File uploads can be preloaded and attached during submission of the Assessment, 
 
 Lodged Measures can be amended when needed using the [LodgementAmend](#lodgementamend)
 
+#### UPRN Check
+
+Before a Project can be Started or Completed checks will be made against the processing project's UPRN. Any existing data within the TrustMark Retrofit Portal held against that UPRN under the same scope of funding will be checked, if any data exists the request will be initially rejected with a 422 response code and a message code. This allows the integrating software provider to notify their user before fully completing their action.
+
+The following message codes exist:
+| Code | Description |
+| ---- | ----------- |
+| UPRN_EXISTS_FIRST | You have created another {{project_type}} project at this property. Ensure that you can meet the eligibility criteria before proceeding. |
+| UPRN_EXISTS_THIRD | Another {{project_type}} project exists at this property. Ensure that you can meet the eligibility criteria before proceeding. |
+| UPRN_EXISTS_FIRST_AND_THIRD | You and another party have created {{project_type}} projects at this property. Ensure that you can meet the eligibility criteria before proceeding. |
+
+This checking exists for the following project types:
+ * GB Insulation Scheme (GBIS)
+
+To accept this message and proceed with the request must be resubmitted with the `acceptUPRNCheck` attribute set to `true`.
+
+
 ### Version
 
 A version value of `2022-04-01` should be supplied.
@@ -259,6 +276,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | yourProjectReference | A string containing your unique project reference |
 | localAuthorityProjectPhase | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
 | localAuthorityProjectKey | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
+| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn%20check) |
 | tenure |  |
 | - premisesTenure | Value from the taxonomy [TenureTypes](tenuretypes) |
 | - residentName |  |
@@ -384,6 +402,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - comments | Optional string |
 | notes [] | Optional array of strings |
 
+#### Res
 
 ### LodgementSubmit
 
