@@ -61,7 +61,7 @@ File uploads can be preloaded and attached during submission of the Assessment, 
 
 Lodged Measures can be amended when needed using the [LodgementAmend](#lodgementamend)
 
-#### UPRN Check
+### UPRN Check
 
 Before a Project can be Started or Completed checks will be made against the processing project's UPRN. Any existing data within the TrustMark Retrofit Portal held against that UPRN under the same scope of funding will be checked, if any data exists the request will be initially rejected with a 422 response code and a message code. This allows the integrating software provider to notify their user before fully completing their action.
 
@@ -276,7 +276,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | yourProjectReference | A string containing your unique project reference |
 | localAuthorityProjectPhase | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
 | localAuthorityProjectKey | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
-| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn%20check) |
+| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
 | tenure |  |
 | - premisesTenure | Value from the taxonomy [TenureTypes](tenuretypes) |
 | - residentName |  |
@@ -402,8 +402,6 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - comments | Optional string |
 | notes [] | Optional array of strings |
 
-#### Res
-
 ### LodgementSubmit
 
 > POST /Data/LodgementSubmit
@@ -465,6 +463,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | :-------------------------------- | ---------------------------------------- |
 | projectReference | The reference of the project generated from the ProjectStart call |
 | rdSAPFileContent | The full RdSAP xml file content |
+| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
 
 ### ProjectVoid
 
