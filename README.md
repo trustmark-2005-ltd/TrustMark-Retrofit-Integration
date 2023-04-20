@@ -956,6 +956,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 
 * [GBIS Project Example](./ReadmeIntegration-example-project-gbis.md)
 
+* [GBIS Lodgement Example](./ReadmeIntegration-example-lodgement-gbis.md)
+
 * [LADS Project Example](./ReadmeIntegration-example-project-lads.md)
 
 * [HUG Project Example](./ReadmeIntegration-example-project-hug.md)
@@ -973,6 +975,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
 * [ProjectVoid Example](./ReadmeIntegration-example-projectvoid.md)
+
+* [UPRN Check Example](./ReadmeIntegration-example-uprn-check-example.md)
 
 ## Postman Examples
 

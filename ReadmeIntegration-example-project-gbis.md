@@ -7,9 +7,9 @@
 {
   "version": "2022-04-01",
   "identity": {
-    "trustmarkId": "api-e5b3e97b-b95e-467f-b082-60fcab47ec6d"
+    "trustmarkId": "api-70232d27-eccc-488e-9501-624296e91f1e"
   },
-  "clientRequestToken" : "66b174f3-0486-40c1-a2f2-aa61d1cf5525",
+  "clientRequestToken" : "3c6b174f3-0486-50c1-a2f2-aa61d1cf5525",
   "request": {
     "assessmentReference": "A1024",
     "ownerTMLN": "10000",
@@ -17,7 +17,8 @@
     "fundingOrganisationName": "string",
     "fundingComment": "string",
     "projectType": "GBIS",
-    "yourProjectReference": "api16",
+    "yourProjectReference": "api_gbis_1",
+    "acceptUPRNCheck": false,
     "tenure": {
       "premisesTenure": "Owner Occupied",
       "residentName": "string",
@@ -46,7 +47,7 @@
     ],
     "projectDefects": [
       {
-        "yourReference": "PD01",
+        "yourReference": "DEMO_PD_01",
         "defectType": "Leaks",
         "comment": "string",
         "severity": "Low",
@@ -96,7 +97,10 @@
             "potentialEnergyRating": 0,
             "repaymentYears": 0,
             "annualCO2Savings": 0,
-            "carbonCostEffectiveness": 0
+            "carbonCostEffectiveness": 0,
+            "productInstalledUnitOfMeasure": "Items",
+            "productInstalledValue": 1,
+            "sapSavings": 1
           }
         ],
         "intendedOutcomes": {
@@ -161,7 +165,10 @@
         "defectResolutions": [
           {
             "assessmentDefectId": "6h_rdZ7olzrgOpRD_0mAZ",
-            "projectDefectYourReference": "string",
+            "resolution": "string"
+          },
+          {
+            "projectDefectYourReference": "DEMO_PD_01",
             "resolution": "string"
           }
         ],
@@ -185,6 +192,36 @@
       {
         "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
         "documentType": "Risk assessment",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Intended outcomes",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Improvement option evaluation",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Medium term improvement plan",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Retrofit design",
+        "comments": "string",
+        "filename": "TestRA.pdf"
+      },
+      {
+        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "documentType": "Pre-Design Building Survey",
         "comments": "string",
         "filename": "TestRA.pdf"
       }
