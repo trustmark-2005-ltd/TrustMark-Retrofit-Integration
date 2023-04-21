@@ -278,7 +278,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | localAuthorityProjectKey | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
 | acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
 | tenure |  |
-| - premisesTenure | Value from the taxonomy [TenureTypes](tenuretypes) |
+| - premisesTenure | Value from the taxonomy [TenureTypes](#tenuretypes) |
 | - residentName |  |
 | - residentContactNumber |  |
 | - residentAlternativeContactNumber |  |
