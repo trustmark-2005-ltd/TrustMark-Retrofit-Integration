@@ -709,6 +709,70 @@ The body looks like this and all you need to supply in the request is the projec
 
 The response is the pdf file as Base64 with mime type application/pdf.
 
+### ProjectUPRNStatus
+
+> POST /Data/ProjectUPRNStatus
+
+Checks for existing projects under the GBIS fund against the project owner TMLN (The Retrofit Cooridnator who created it) and UPRN provided. See [UPRN Check](#uprn-check)
+
+| Field                      | Information                              |
+| -------------------------- | ---------------------------------------- |
+| ownerTMLN                  | The TMLN to check                        |
+| uprn                       | The UPRN to check                        |
+
+#### Request
+
+```json
+{
+  "version": "string",
+  "identity": {
+    "trustmarkId": "string"
+  },
+  "request": {
+    "ownerTMLN": "string",
+    "uprn": "string"
+  }
+}
+```
+
+##### Example Request
+
+```json
+{
+  "version": "2022-04-01",
+  "identity": {
+    "trustmarkId": "api-e5b3e97b-b95e-467f-b082-60fcab47ec6d"
+  },
+  "clientRequestToken" : "a4003e76-fd82-a3d5-ba88-26ad1e3da0b4",
+  "request": {
+    "ownerTMLN": "1399311",
+    "uprn": "10008507326"
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "uprn": "string",
+  "checkedTMLN": "string",
+  "checkedFundType": "string",
+  "code": "string"
+}
+```
+
+##### Example Response
+
+```json
+{
+  "uprn": "10008507326",
+  "checkedTMLN": "1399311",
+  "checkedFundType": "GBIS",
+  "code": "UPRN_EXISTS_FIRST"
+}
+```
+
 ### Taxonomies
 
 #### CombustionVentilationAcceptableTypes
