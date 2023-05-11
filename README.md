@@ -997,6 +997,15 @@ Returns the list of questions that must be provided for WHD standalone lodgement
 
 Returns a list of WHD only options for `measure.workTypeCode` in the ProjectStart request.
 
+#### MeasureTypesByProjectType
+
+> POST /Taxonomies/MeasureTypesByProjectType
+
+Returns a list of measures for the requested project type.
+
+| Field                             | Information                              |
+| --------------------------------- | ---------------------------------------- |
+| projectType                  | The project type to filter the measure types on, e.g. ECO4, LADS, HUG, WHD, SHDF, LicencePlus |
 
 ## RdSAP Files
 
