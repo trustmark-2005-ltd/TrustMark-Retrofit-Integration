@@ -558,6 +558,7 @@ You will need an existing ProjectReference and LodgementId in order to do this.
 
 The owner of the Project must have enough credit to cover any fees for this transaction.
 
+##### Creating a New Measure 
 This endpoint can also add measures if an existing measure has been submitted with the same TrustMarkTradeCode in the LodgementSubmit call. To do this use the `measureId` of the measure that has the same TrustMarkTradeCode, and the value 'TBC' for `umr`.
 
 | Field                             | Information                              |
