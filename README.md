@@ -56,6 +56,7 @@ The RIAPI focuses on allowing Assessment, Project and Lodgement data to be submi
 | 4        | Project    | [Complete](#projectcomplete) | Completes the existing Project using a ProjectReference                                    | ProjectComplete  |
 | (5)      | Project    | [Void](#projectvoid) | Voids an inprogress or draft project using a ProjectReference                                  | ProjectVoid  |
 | (6)      | Lodgement  | [Amend](#lodgementamend) | Amends measures in a completed lodgement                              | LodgementAmend  |
+| (7)      | Project  | [Amend](#projectamend) | Amends a project final RdSAP file                              | ProjectAmend  |
 
 File uploads can be preloaded and attached during submission of the Assessment, Project, Lodgement and also as a standalone Supporting Document attaching to an existing Project. See [FileUploadToken](#fileuploadtoken)
 
@@ -478,6 +479,22 @@ Voids an existing retrofit project.
 | projectReference | The reference of the project generated from the ProjectStart call |
 
 Any attempts to void a project on an invalid status will result in a 422 response.
+
+### ProjectAmend
+
+> POST /Data/ProjectAmend
+
+Amend an existing retrofit project.
+
+The owner of the Project must have enough credit to cover any fees for this transaction.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| projectReference | The reference of the project generated from the ProjectStart call |
+| rdSAPFileContent | The full RdSAP xml file content |
+| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
+| acceptSamePrePostScores | Required to accept warning of same pre and post scores, which will be raised if this POST RdSAP file contains the same or a lower score than the PRE RdSASP file. It could be a valid case so it is not blocking, provide `true` to knowledge and override this warning. This is a precaution to prevent users uploading the incorrect file. Warnings are raised with a 422 response code and response message of `SAME_PRE_AND_POST_SAP_SCORE` or `LOWER_PRE_AND_POST_SAP_SCORE` |
+| acceptAddressCheck | Required to accept address check warning, which will be raised if the Address Line 1 in the POST RdSAP file is different to that in the Started Project. It could be a valid case so it is not blocking, provide `true` to knowledge and override this warning. This is a precaution to prevent users uploading the incorrect file. Warnings are raised with a 422 response code and response message of `ADDRESS_LINE_1_DIFFERENT` |
 
 ### SupportingDocument
 
@@ -1049,6 +1066,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
 * [ProjectVoid Example](./ReadmeIntegration-example-projectvoid.md)
+
+* [ProjectAmend Example](./ReadmeIntegration-example-projectamend.md)
 
 * [UPRN Check Example](./ReadmeIntegration-example-uprn-check-example.md)
 
