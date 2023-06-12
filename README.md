@@ -486,7 +486,7 @@ Any attempts to void a project on an invalid status will result in a 422 respons
 
 Amend an existing retrofit project.
 
-The owner of the Project must have enough credit to cover any fees for this transaction.
+The owner of the Project must have enough credit to cover any fees for this transaction. Projects can only be amended if there have been no Ofgem queries against it.
 
 | Field                             | Information                              |
 | :-------------------------------- | ---------------------------------------- |
