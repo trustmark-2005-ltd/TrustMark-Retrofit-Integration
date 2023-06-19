@@ -558,7 +558,7 @@ You will need an existing ProjectReference and LodgementId in order to do this.
 
 The owner of the Project must have enough credit to cover any fees for this transaction.
 
-##### Creating a New Measure 
+##### Creating a New Measure
 This endpoint can also add measures if an existing measure has been submitted with the same TrustMarkTradeCode in the LodgementSubmit call. To do this use the `measureId` of the measure that has the same TrustMarkTradeCode, and the value 'TBC' for `umr`.
 
 | Field                             | Information                              |
@@ -1073,5 +1073,73 @@ To lodge work as a Software Provider on behalf on a TrustMark Registered Busines
 - Logging into your retrofit portal account and retrieving your Retrofit Account Id.
 - Providing it to the TrustMark Business
 - They log into their portal and enter the Retrofit Account Id in the 'Third Party Access' tab and 'Grant Access'
+
+## TrustMark Licence (TMLN) TradeCheck
+
+You can request an API Key to use the `TradeCheck Service` provided by TrustMark that will enable you to request trades that a TMLN is registered for.
+
+### Endpoints
+
+UAT Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
+
+Production Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
+
+#### Sample Request
+
+```json
+{
+  "publicId": 3033827
+}
+```
+
+#### Sample Response
+
+```json
+{
+  "success": true,
+  "tmln": "3033827",
+  "trades": [
+    {
+      "tradeCode": 89,
+      "tradeDescription": "Cavity Wall Internal Insulation [B8 - 2019]",
+      "registered": [
+        {
+          "fromDate": "2023-03-27T00:00:00+00:00",
+          "toDate": null,
+          "certificateId": null,
+          "schemeId": "trustmark_logo"
+        }
+      ]
+    },
+    {
+      "tradeCode": 103,
+      "tradeDescription": "Room in Roof Insulation [B12 - 2019]",
+      "registered": [
+        {
+          "fromDate": "2023-03-27T00:00:00+00:00",
+          "toDate": null,
+          "certificateId": null,
+          "schemeId": "trustmark_logo"
+        }
+      ]
+    }
+  ],
+  "schemes": [
+    "trustmark_logo"
+  ],
+  "organisationRegisteredName": "FPTestLAP1",
+  "rcInfo": {
+    "isRC": false,
+    "isRA": false,
+    "apiOnlyRC": false,
+    "apiOnlyRA": false,
+    "rcSchemeIds": [],
+    "apiOnlyRCSchemeIds": [],
+    "apiOnlyRASchemeIds": []
+  },
+  "lastUpdated": "27/03/2023 14:35",
+  "licenceStatus": "Active"
+}
+```
 
 
