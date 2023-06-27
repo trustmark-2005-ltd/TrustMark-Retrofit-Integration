@@ -480,6 +480,39 @@ Voids an existing retrofit project.
 
 Any attempts to void a project on an invalid status will result in a 422 response.
 
+### ProjectUpdatePropertyInformation
+
+> PUT /Data/ProjectUpdatePropertyInformation
+
+Updates property information for an existing retrofit project.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| projectReference | The reference of the project generated from the ProjectStart call |
+| propertyType | Value from the taxonomy [PropertyTypes](#propertytypes)  |
+| propertyDetachment | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
+| propertyAge | Value from the taxonomy [PropertyAgeTypes](#propertyagetypes) |
+| propertyConstruction [] | Array of values from the taxonomy [PropertyConstructionTypes] |
+| propertyBedrooms | Value from the taxonomy PropertyBedroomTypes |
+
+Any attempts to void a project on an invalid status will result in a 422 response.
+
+### ProjectUpdateTenure
+
+> PUT /Data/ProjectUpdateTenure
+
+Updates tenure for an existing retrofit project.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| projectReference | The reference of the project generated from the ProjectStart call |
+| premisesTenure | Value from the taxonomy [TenureTypes](#tenuretypes) |
+| residentName |  |
+| residentContactNumber |  |
+| ownerName |  |
+| ownerContactNumber |  |
+| ownerEmail | This will be used to distribute certificates |
+
 ### ProjectAmend
 
 > POST /Data/ProjectAmend
@@ -1066,6 +1099,10 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
 * [ProjectVoid Example](./ReadmeIntegration-example-projectvoid.md)
+
+* [ProjectUpdateTenure Example](./ReadmeIntegration-example-projectupdatetenure.md)
+
+* [ProjectUpdatePropertyInformation Example](./ReadmeIntegration-example-projectupdatepropertyinformation.md)
 
 * [ProjectAmend Example](./ReadmeIntegration-example-projectamend.md)
 
