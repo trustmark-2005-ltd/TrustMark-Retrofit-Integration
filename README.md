@@ -1122,7 +1122,7 @@ Certificates will be returned as Base64 - https://base64.guru/converter/decode/f
 
 Before access to live API keys can be granted, integrators must sign a Data Sharing Agreement and successfully complete testing of their integration.
 The document below provides an overview of core testing scenarios and includes the declarations that must be built into your application and evidenced.
-http://trustmark.org.uk/docs/default-source/data-warehouse/retrofit-api-testcases
+[API Testcases and Declarations](https://cms.trustmark.org.uk/media/sbmhxelb/retrofit-api-testscenarios.xlsx)
 
 ## Third Party Lodgement Permission
 To lodge work as a Software Provider on behalf on a TrustMark Registered Business they must give you permission to lodge on their behalf. This can be achieved by:
