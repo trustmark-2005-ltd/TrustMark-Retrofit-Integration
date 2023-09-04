@@ -193,7 +193,13 @@
     ],
     "notes": [
       "string"
-    ]
+    ],
+    "highRiskQuestions": [
+      {
+        "question": "Digital Uplift",
+        "answer": "Yes",
+      },
+    ],
   }
 }
 ```
