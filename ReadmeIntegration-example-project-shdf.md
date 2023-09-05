@@ -197,9 +197,9 @@
     "highRiskQuestions": [
       {
         "question": "Digital Uplift",
-        "answer": "Yes",
-      },
-    ],
+        "answer": "Yes"
+      }
+    ]
   }
 }
 ```
