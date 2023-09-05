@@ -402,7 +402,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - documentType | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | Optional string |
 | notes [] | Optional array of strings |
-| highRiskQuestions                 | Required for projectType SHDF. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions) |
+| highRiskQuestions                 | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example. |
 | - question                        | Question string provided by the taxonomy |
 | - answer                          | Answer string from the potential answer options provided by the taxonomy |
 
