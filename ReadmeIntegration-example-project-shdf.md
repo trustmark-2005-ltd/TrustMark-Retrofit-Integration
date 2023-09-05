@@ -19,7 +19,7 @@
     "projectType": "SHDF",
     "yourProjectReference": "api16",
     "localAuthorityProjectPhase": "SHDF (Wave 2.1)",
-    "localAuthorityProjectKey": "Wave 2.1 - Exeter City Council - 824",
+    "localAuthorityProjectKey": "824",
     "tenure": {
       "premisesTenure": "Owner Occupied",
       "residentName": "string",
