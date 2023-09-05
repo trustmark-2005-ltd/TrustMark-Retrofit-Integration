@@ -18,8 +18,8 @@
     "fundingComment": "string",
     "projectType": "SHDF",
     "yourProjectReference": "api16",
-    "localAuthorityProjectPhase": "SHDF (D)",
-    "localAuthorityProjectKey": "Aberdeen City Council",
+    "localAuthorityProjectPhase": "SHDF (Wave 2.1)",
+    "localAuthorityProjectKey": "824",
     "tenure": {
       "premisesTenure": "Owner Occupied",
       "residentName": "string",
@@ -193,6 +193,12 @@
     ],
     "notes": [
       "string"
+    ],
+    "highRiskQuestions": [
+      {
+        "question": "Digital Uplift",
+        "answer": "Yes"
+      }
     ]
   }
 }
