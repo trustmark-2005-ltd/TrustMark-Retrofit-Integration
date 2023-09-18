@@ -378,6 +378,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - declaredProjectRisk | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
 | - highestRiskCombination | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
 | retrofitDesigns [] | |
+| - installerQualityAssuranceClaimed | true, false, null |
 | - isRegisteredWithTrustmark | true if the designer is registered with TrustMark; otherwise false |
 | - designerTMLN | The TMLN of the Designer, required if `isRegisteredWithTrustmark`  |
 | - designerName | String required if not `isRegisteredWithTrustmark` |
