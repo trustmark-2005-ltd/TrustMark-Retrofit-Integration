@@ -2,6 +2,11 @@
 
 First Published April 22
 
+
+> PAS 2035/2030 2023 has been published by BSI and is [available here](https://www.bsigroup.com/en-GB/standards/pas-2035-2030/).
+> We are reviewing the changes required and will update this documentation accordingly. 
+
+
 > Supporting [Sandbox Swagger](https://api.sandbox.retrofitintegration.data-hub.org.uk/swagger/index.html)
 
 ## Introduction
