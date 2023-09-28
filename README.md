@@ -905,7 +905,7 @@ Returns a list of options for `riskAssessment.highestRiskCombination` in the Pro
 
 > GET /Taxonomies/InnovationMeasureTypes
 
-Returns a list of innovation measure types for which the `productId` value can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
+Returns a list of innovation measure types for which a value from `approvedProducts` can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
 
 #### ProjectTypes
 
