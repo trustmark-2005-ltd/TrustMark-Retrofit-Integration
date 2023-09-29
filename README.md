@@ -636,6 +636,9 @@ This endpoint can also add measures if an existing measure has been submitted wi
 | - productManufacturer |  |
 | - productModel |  |
 | - productVersion |  |
+| - isInnovationMeasure |  |
+| - innovationMeasureProduct |  |
+| - innovationMeasureNumber |  |
 
 #### StandaloneLodgementSubmit
 
