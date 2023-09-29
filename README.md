@@ -637,8 +637,8 @@ This endpoint can also add measures if an existing measure has been submitted wi
 | - productModel |  |
 | - productVersion |  |
 | - isInnovationMeasure | true if an Ofgem Innovation Measure; otherwise false |
-| - innovationMeasureProduct | Value from the taxonomy InnovationMeasureTypes approvedProducts |
-| - innovationMeasureNumber | Value from the taxonomy InnovationMeasureTypes number |
+| - innovationMeasureProduct | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) `approvedProducts` |
+| - innovationMeasureNumber | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) `number` |
 
 #### StandaloneLodgementSubmit
 
