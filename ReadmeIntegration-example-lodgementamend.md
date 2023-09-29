@@ -21,7 +21,10 @@
         "installedDate": "2022-04-25",
         "handoverDate": "2022-04-28",
         "workCarriedOutByTMLN": "2337207",
-        "workCarriedOutBySchemeId": "trustmark_logo"
+        "workCarriedOutBySchemeId": "trustmark_logo",
+        "isInnovationMeasure": true,
+        "innovationMeasureProduct": "ARP CWI (BBA certificate 89/2294, product sheet 2)",
+        "innovationMeasureNumber": "009"
       }
     ]
   }

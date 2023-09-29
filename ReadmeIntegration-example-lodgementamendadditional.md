@@ -22,7 +22,10 @@
         "installedDate": "2022-04-25",
         "handoverDate": "2022-04-28",
         "workCarriedOutByTMLN": "2337207",
-        "workCarriedOutBySchemeId": "trustmark_logo"
+        "workCarriedOutBySchemeId": "trustmark_logo",
+        "isInnovationMeasure": false,
+        "innovationMeasureProduct": "",
+        "innovationMeasureNumber": ""
       }
     ]
   }
