@@ -1116,6 +1116,10 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 
 * [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
+* [HIL StandaloneLodgement Example](./ReadmeIntegration-example-hil-standalonelodgement.md)
+
+* [Licence Plus Connected For Warmth StandaloneLodgement Example](./ReadmeIntegration-example-licenceplus-cfw-standalonelodgement.md)
+
 * [ProjectVoid Example](./ReadmeIntegration-example-projectvoid.md)
 
 * [ProjectUpdateTenure Example](./ReadmeIntegration-example-projectupdatetenure.md)
