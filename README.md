@@ -377,7 +377,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - savingsSAPPoints |  |
 | - - stageDurationInWeeks |  |
 | - - keyEventComments |  |
-| - - inScopeCurrentProject |  |
+| - - inScopeCurrentProject | Your plan must have at least one stage in scope. Anything in scope is expected to be lodged within this project. This affects how the early project fee is calculated. |
 | - - improvementOptionEvaluationMeasureReferences [] | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
 | riskAssessment |  |
 | - declaredProjectRisk | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
