@@ -888,7 +888,7 @@ Returns a list of options for `retrofitDesigns.designerQualification` in the Pro
 > GET /Taxonomies/DocumentTypes
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [DocumentsByMatrixType](#documentsbymatrixtype) instead.
 >
 Returns a list of options for `documentType` in the SupportingDocument requests and `supportingDocumentAttachments.documentType` in the AssessmentSubmit and ProjectStart requests.
 
@@ -995,7 +995,7 @@ Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.wo
 > GET /Taxonomies/MeasureTypes
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request. To filter for ECO4 only check the property eco4Name has a value, or use [MeasureTypesECO4](#measuretypeseco4) instead to get a filtered list.
 
@@ -1004,7 +1004,7 @@ Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.wo
 > GET /Taxonomies/MeasureTypesECO4
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of ECO4 only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
 
@@ -1013,7 +1013,7 @@ Returns a list of ECO4 only options for `improvementOptionEvaluations.measuresEv
 > GET /Taxonomies/MeasureTypesHUG
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of HUG only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
 
@@ -1022,7 +1022,7 @@ Returns a list of HUG only options for `improvementOptionEvaluations.measuresEva
 > GET /Taxonomies/MeasureTypesLADS
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of LADS only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
 
@@ -1031,7 +1031,7 @@ Returns a list of LADS only options for `improvementOptionEvaluations.measuresEv
 > GET /Taxonomies/MeasureTypesSHDF
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
 
@@ -1040,7 +1040,7 @@ Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEv
 > GET /Taxonomies/MeasureTypesWHD
 
 >[!WARNING]
-> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbymatrixtype) instead.
 
 Returns a list of WHD only options for `measure.workTypeCode` in the ProjectStart request.
 
@@ -1170,6 +1170,10 @@ In order to use MCS measures you must provide an MCS Certificate Reference that 
 ## Visualising
 
 If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvisio.com/editor) illustrates data on graphs well and can help with the understanding of the Assessment, Project and Lodgement requests.
+
+* [PAS2023 Assessment Example](./example-assessment-pas2023.md)
+
+* [PAS2023 Project Example](./example-project-eco4-pas2023.md)
 
 * [Assessment Example](./ReadmeIntegration-example-assessment.md)
 
