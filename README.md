@@ -4,7 +4,9 @@ First Published April 22
 
 
 > PAS 2035/2030 2023 has been published by BSI and is [available here](https://www.bsigroup.com/en-GB/standards/pas-2035-2030/).
-> We are reviewing the changes required and will update this documentation accordingly. 
+
+> [!NOTE]
+> PAS 2035 [2023] is now available for use. The TrustMark Retrofit Integration API has been updated to support the new PAS 2035 [2023] standard, the change is non-breaking and PAS 2035 [2019] is assumed by default. The API will continue to support the previous PAS 2035 [2019] standard until further notice.
 
 
 > Supporting [Sandbox Swagger](https://api.sandbox.retrofitintegration.data-hub.org.uk/swagger/index.html)
@@ -204,49 +206,51 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 
 > If you are not submitting your own assessment and using one already submitted by a Retrofit Assessor see [Assessment](#assessment).
 
-| Field                             | Information                              |
-| :-------------------------------- | ---------------------------------------- |
-| rdSAPFileContent                  | The full RdSAP xml file content |
-| ownerTMLN                         | The TMLN of the owner of this Assessment who lodged the Assessment |
-| assessorTMLN                      | The TMLN of the Retrofit Assessor who conducted the Assessment |
-| assessorSchemeId                  | A valid SchemeId the assessor is registered with to lodge this Assessment |
-| defects []                        | Contains an array of any defects that have been identified |
-| - defectType                      | Value from the taxonomy [DefectTypes](#defecttypes) |
-| - comment | Optional string       |
-| - severity                        | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
-| - locations []                    | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
-| - repairCost                      |  |
-| - resolutionBeforeRetrofit        | Must or Can |
-| - destructiveTestsConducted       | Optional string |
-| - hasEvidence                     | true / false |
-| - evidenceImageFileUploadTokens []| Optional array of strings containing fileUploadToken values |
-| - yourReference                   | Optional string to identity this defect
-| occupancy                         |  |
-| - typicalOccupancy                | true / false |
-| - occupancyNotes                  | Optional string |
-| - numberOccupants                 | Number |
-| - specialConsiderationsApplicable | true / false |
-| ventilation                       |  |
-| - existingVentilationProvided     | Value from the taxonomy [ExistingVentilationProvidedTypes](#existingventilationprovidedtypes) |
-| - ventilationType                 | Value from the taxonomy [VentilationTypes](#ventilationtypes) |
-| - ventilationNotes                | Optional string |
-| - preRetrofitPulseAirTightnessTestRating |  |
-| - preRetrofitBlowerDoorAirTightnessTestRating |  |
-| - suitableBackgroundVentilationPresent | true / false |
-| significance                      |  |
-| - appraisalOfHeritage             | Optional string |
-| context                           |  |
-| - buildingOrientation             | Optional number 0 - 360 |
-| - combustionVentilationAcceptable | Value from the taxonomy CombustionVentilationAcceptableTypes |
-| - exposureZone                    | Value from the taxonomy [ExposureZoneTypes](#exposurezonetypes) |
-| - planningConstraints             | true / false |
-| - planningComments                | Required if planningConstraints is true |
-| - propertyConstruction []         | Array of values from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
-| - propertyDetachment              | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
-| - siteAccessNotes                 | Optional string |
-| - statutoryLimitations []         | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
-| - statutoryLimitationsComment     | Optional string |
-| - isPublic     | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
+| Field                             | PAS Version | Information                              |
+| :-------------------------------- | ----------- | ---------------------------------------- |
+| pasVersion                        | | Value from the taxonomy [PASVersions](#pasversions). Defaults to `PAS2035 [2019]` if not
+| rdSAPFileContent                  | | The full RdSAP xml file content |
+| ownerTMLN                         | | The TMLN of the owner of this Assessment who lodged the Assessment |
+| assessorTMLN                      | | The TMLN of the Retrofit Assessor who conducted the Assessment |
+| assessorSchemeId                  | | A valid SchemeId the assessor is registered with to lodge this Assessment |
+| defects []                        | | Contains an array of any defects that have been identified |
+| - defectType                      | | Value from the taxonomy [DefectTypes](#defecttypes) |
+| - comment                         | |  Optional string |
+| - severity                        | | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
+| - locations []                    | | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
+| - repairCost                      | |  |
+| - resolutionBeforeRetrofit        | | Must or Can |
+| - destructiveTestsConducted       | | Optional string |
+| - hasEvidence                     | | true / false |
+| - evidenceImageFileUploadTokens []| | Optional array of strings containing fileUploadToken values |
+| - yourReference                   | | Optional string to identity this defect
+| occupancy                         | |  |
+| - typicalOccupancy                | | true / false |
+| - occupancyNotes                  | | Optional string |
+| - numberOccupants                 | | Number |
+| - specialConsiderationsApplicable | | true / false |
+| ventilation                       | |  |
+| - existingVentilationProvided     | 2023 can require Ventiliation Defect | Value from the taxonomy [ExistingVentilationProvidedTypes](#existingventilationprovidedtypes) |
+| - ventilationType                 | | Value from the taxonomy [VentilationTypes](#ventilationtypes) |
+| - ventilationNotes                | | Optional string |
+| - preRetrofitPulseAirTightnessTestRating | |  |
+| - preRetrofitBlowerDoorAirTightnessTestRating | |  |
+| - suitableBackgroundVentilationPresent | | true / false |
+| significance                      | |  |
+| - appraisalOfHeritage             | 2019 only | Optional string |
+| - areaSignificanceIdentified      | 2023 only | true / false. Only provided with propertyConstruction 'Traditional, not protected -
+| context                           | |  |
+| - buildingOrientation             | | Optional number 0 - 360 |
+| - combustionVentilationAcceptable | 2023 can require Ventiliation Defect | Value from the taxonomy CombustionVentilationAcceptableTypes |
+| - exposureZone                    | | Value from the taxonomy [ExposureZoneTypes](#exposurezonetypes) |
+| - planningConstraints             | | true / false |
+| - planningComments                | | Required if planningConstraints is true |
+| - propertyConstruction []         | | Array of values from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
+| - propertyDetachment              | | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
+| - siteAccessNotes                 | | Optional string |
+| - statutoryLimitations []         | | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
+| - statutoryLimitationsComment     | | Optional string |
+| - isPublic     | | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
 
 
 
@@ -271,146 +275,149 @@ Creates a new Retrofit Project using an AssessmentReference, generating a Projec
 
 The owner of the Project must have enough credit to cover any fees for this transaction.
 
-| Field                             | Information                              |
-| :-------------------------------- | ---------------------------------------- |
-| assessmentReference | The Assessment Reference to use for this Project. As generated when the assessment was submitted or provided to you by a Retrofit Assessor |
-| ownerTMLN | The TMLN of the owner of this Project |
-| schemeId | The schemeId of the Scheme Provider which the Project will be submitted under. This must be a value from the schemeId from the taxonomy [SchemeOptions](#schemeoptions), this must also be valid registration with the TMLN |
-| fundingOrganisationName |  |
-| fundingComment |  |
-| projectType | Value from the taxonomy [ProjectTypes](#projecttypes) |
-| yourProjectReference | A string containing your unique project reference |
-| localAuthorityProjectPhase | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
-| localAuthorityProjectKey | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
-| acceptUPRNCheck | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
-| tenure |  |
-| - premisesTenure | Value from the taxonomy [TenureTypes](#tenuretypes) |
-| - residentName |  |
-| - residentContactNumber |  |
-| - residentAlternativeContactNumber |  |
-| - ownerName |  |
-| - ownerContactNumber |  |
-| - ownerAlternativeContactNumber |  |
-| - ownerEmail | This will be used to distribute certificates |
-| propertyInformation |  |
-| - propertyType | Value from the taxonomy [PropertyTypes](#propertytypes)  |
-| - propertyDetachment | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
-| - propertyAge | Value from the taxonomy [PropertyAgeTypes](#propertyagetypes) |
-| - propertyConstruction [] | Array of values from the taxonomy [PropertyConstructionTypes] |
-| - propertyBedrooms | Value from the taxonomy PropertyBedroomTypes |
-| assessmentDefects [] | Array of assessment defects being covered in the project |
-| - defectId | The defectId as listed in the Assessment |
-| - actualRepairCost |  |
-| - toBeAddressedInProject | true / false  |
-| projectDefects [] | Array of new defects that have been identified at project stage |
-| - yourReference | A string reference value |
-| - defectType | Value from the taxonomy [DefectTypes](#defecttypes) |
-| - comment | Optional string |
-| - severity | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
-| - locations [] | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
-| - repairCost |  |
-| - resolutionBeforeRetrofit | Must or Can |
-| - hasEvidence | true / false |
-| - actualRepairCost |  |
-| - toBeAddressedInProject | true / false |
-| intendedOutcomes | true / false |
-| - reductionEnergyUse | true / false |
-| - reductionInEnergyCosts | true / false |
-| - reductionsInEmissions | true / false |
-| - improvementsInInternalComfort | true / false |
-| - improvementsOfIAQ | true / false |
-| - eliminationDampCondensationMould | true / false |
-| - reduceRiskOverheating | true / false |
-| - improvementsInEnergyRating | true / false |
-| - meetPerformanceStandard | true / false |
-| - improvementsInUsefulnessSustainability | true / false |
-| - protectBuildingAgainstDecay | true / false |
-| - resistanceFloodAndWaterPenetration | true / false |
-| - protectionArchitecturalHeritage | true / false |
-| - integrationEEMSAndOtherImprovements | true / false |
-| - otherRelevantIssues | Optional string |
-| - monitoringMethod | Optional string |
-| improvementOptionEvaluations [] | Array of improvement option evaluations, must contain one marked as `isMediumTermPlanBase` |
-| - reference | A string reference value |
-| - calculationMethodology |  |
-| - householdContribution |  |
-| - measuresEvaluated [] | |
-| -  - yourReference | A string reference value |
-| -  - workTypeCode | Value from the taxonomy [MeasureTypes](#measuretypes) |
-| -  - product |  |
-| -  - measureEligibilityStatus | Value from the taxonomy [MeasureEligibilityStatusTypes](#measureeligibilitystatustypes) |
-| -  - measureInstallationCost | Decimal of the install cost |
-| -  - annualFuelCostSaving | Decimal of the annual fuel cost saving |
-| -  - potentialEnergyRating | Number of the potential energy rating  |
-| -  - repaymentYears | Decimal of the number of years to repay |
-| -  - annualCO2Savings | Decimal of the CO2 Savings |
-| -  - carbonCostEffectiveness | Decimal of the carbon cost effectiveness |
-| -  - sapSavings | Decimal range 0-100. Mandatory when the `measureEligibilityStatus` is 'Eligible' |
-| -  - productInstalledUnitOfMeasure | 'Items' or 'm2' required when measureEligibilityStatus is 'Eligible' |
-| -  - productInstalledValue | Numeric value to indicate how many items or m2 of product evaluated |
-| - intendedOutcomes |  |
-| - - reductionEnergyUse | true / false |
-| - - reductionInEnergyCosts | true / false |
-| - - reductionsInEmissions | true / false |
-| - - improvementsInInternalComfort | true / false |
-| - - improvementsOfIAQ | true / false |
-| - - eliminationDampCondensationMould | true / false |
-| - - reduceRiskOverheating | true / false |
-| - - improvementsInEnergyRating | true / false |
-| - - meetPerformanceStandard | true / false |
-| - - improvementsInUsefulnessSustainability | true / false |
-| - - protectBuildingAgainstDecay | true / false |
-| - - resistanceFloodAndWaterPenetration | true / false |
-| - - protectionArchitecturalHeritage | true / false |
-| - - integrationEEMSAndOtherImprovements | true / false |
-| - - otherRelevantIssues | Optional string |
-| - - monitoringMethod | Optional string |
-| - isMediumTermPlanBase | true if this is the Improvement Option Evaluation to be taken forward for the Medium Term Improvement Plan; otherwise false |
-| mediumTermImprovementPlan |  |
-| - reference | A string reference value |
-| - savingsMoney |  |
-| - savingsSAPPoints |  |
-| - stages [] |  |
-| - - sequence | Number indicating the sequence the stages will be conducted |
-| - - dependentStages [] | Optional array containing numbers of stages that will be completed prior to this stage |
-| - - savingsMoney |  |
-| - - savingsSAPPoints |  |
-| - - stageDurationInWeeks |  |
-| - - keyEventComments |  |
-| - - inScopeCurrentProject | Your plan must have at least one stage in scope. Anything in scope is expected to be lodged within this project. This affects how the early project fee is calculated. |
-| - - improvementOptionEvaluationMeasureReferences [] | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
-| riskAssessment |  |
-| - declaredProjectRisk | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
-| - highestRiskCombination | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
-| - installerQualityAssuranceClaimed | true, false, null |
-| retrofitDesigns [] | |
-| - isRegisteredWithTrustmark | true if the designer is registered with TrustMark; otherwise false |
-| - designerTMLN | The TMLN of the Designer, required if `isRegisteredWithTrustmark`  |
-| - designerName | String required if not `isRegisteredWithTrustmark` |
-| - designerQualification | Value from the taxonomy [DesignerQualificationTypes](#designerqualificationtypes)  |
-| - improvementOptionEvaluationMeasureReferences [] | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
-| - ventilationTreatmentType | Value from the taxonomy [VentilationTreatmentTypes](#ventilationtreatmenttypes) |
-| - thermalBridgeRiskPresent | true / false |
-| - thermalBridgeActionDescription | Required if `thermalBridgeRiskPresent` |
-| - thermalBridgeTreatment | Value from the taxonomy [ThermalBridgeTreatmentTypes](#thermalbridgetreatmenttypes) |
-| - defectResolutions [] | Array of defects resolved with this design |
-| - - assessmentDefectId | If an assessment defect, the `defectId` reference |
-| - - projectDefectYourReference | If a project defect, the `yourReference` reference |
-| - - resolution | String detailing the resolution |
-| - ventilationTreatmentStrategy | Value from the taxonomy [VentilationTreatmentStrategyTypes](#ventilationtreatmentstrategytypes) |
-| - ventilationStrategyNotes |  |
-| roles |  |
-| - installerTMLNs [] | Array of any TMLN of installers to be used |
-| - evaluatorTMLN | TMLN of the Evaluator |
-| supportingDocumentAttachments [] | Array of supporting documents  |
-| - fileUploadToken | String as created [FileUploadToken](#fileuploadtoken) |
-| - filename | Filename string provided to create the fileUploadToken |
-| - documentType | Value from the taxonomy [DocumentTypes](#documenttypes) |
-| - comments | Optional string |
-| notes [] | Optional array of strings |
-| highRiskQuestions                 | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example. |
-| - question                        | Question string provided by the taxonomy |
-| - answer                          | Answer string from the potential answer options provided by the taxonomy |
+> [!IMPORTANT]
+> The PAS version of a project is inherited from the assessment, always ensure you are using a correct assessment.
+
+| Field                             | PAS Version | Information                              |
+| :-------------------------------- | ----------- | ---------------------------------------- |
+| assessmentReference | | The Assessment Reference to use for this Project. As generated when the assessment was submitted or provided to you by a Retrofit Assessor |
+| ownerTMLN | | The TMLN of the owner of this Project |
+| schemeId | | The schemeId of the Scheme Provider which the Project will be submitted under. This must be a value from the schemeId from the taxonomy [SchemeOptions](#schemeoptions), this must also be valid registration with the TMLN |
+| fundingOrganisationName | |  |
+| fundingComment | |  |
+| projectType | | Value from the taxonomy [ProjectTypes](#projecttypes) |
+| yourProjectReference | | A string containing your unique project reference |
+| localAuthorityProjectPhase | | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
+| localAuthorityProjectKey | | Value from the taxonomy [LocalAuthorityProjectsLADS](#LocalAuthorityProjectsLADS) / [LocalAuthorityProjectsSHDF](#LocalAuthorityProjectsSHDF) / [LocalAuthorityProjectsHUG](#LocalAuthorityProjectsHUG) for Local Authority projects only |
+| acceptUPRNCheck | | Required to accept UPRN warning of existing records at the same UPRN, see [UPRN Check](#uprn-check) |
+| tenure | |  |
+| - premisesTenure | | Value from the taxonomy [TenureTypes](#tenuretypes) |
+| - residentName | |  |
+| - residentContactNumber | |  |
+| - residentAlternativeContactNumber | |  |
+| - ownerName | |  |
+| - ownerContactNumber | |  |
+| - ownerAlternativeContactNumber | |  |
+| - ownerEmail | | This will be used to distribute certificates |
+| propertyInformation | |  |
+| - propertyType | | Value from the taxonomy [PropertyTypes](#propertytypes)  |
+| - propertyDetachment | | Value from the taxonomy [PropertyDetachmentTypes](#propertydetachmenttypes) |
+| - propertyAge | | Value from the taxonomy [PropertyAgeTypes](#propertyagetypes) |
+| - propertyConstruction [] | | Array of values from the taxonomy [PropertyConstructionTypes] |
+| - propertyBedrooms | | Value from the taxonomy PropertyBedroomTypes |
+| assessmentDefects [] | | Array of assessment defects being covered in the project |
+| - defectId | | The defectId as listed in the Assessment |
+| - actualRepairCost | |  |
+| - toBeAddressedInProject | | true / false  |
+| projectDefects [] | | Array of new defects that have been identified at project stage |
+| - yourReference | | A string reference value |
+| - defectType | | Value from the taxonomy [DefectTypes](#defecttypes) |
+| - comment | | Optional string |
+| - severity | | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
+| - locations [] | | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
+| - repairCost | |  |
+| - resolutionBeforeRetrofit | | Must or Can |
+| - hasEvidence | | true / false |
+| - actualRepairCost | |  |
+| - toBeAddressedInProject | | true / false |
+| intendedOutcomes | | true / false |
+| - reductionEnergyUse | | true / false |
+| - reductionInEnergyCosts | | true / false |
+| - reductionsInEmissions | | true / false |
+| - improvementsInInternalComfort | | true / false |
+| - improvementsOfIAQ | | true / false |
+| - eliminationDampCondensationMould | | true / false |
+| - reduceRiskOverheating | | true / false |
+| - improvementsInEnergyRating | | true / false |
+| - meetPerformanceStandard | | true / false |
+| - improvementsInUsefulnessSustainability | | true / false |
+| - protectBuildingAgainstDecay | | true / false |
+| - resistanceFloodAndWaterPenetration | | true / false |
+| - protectionArchitecturalHeritage | | true / false |
+| - integrationEEMSAndOtherImprovements | | true / false |
+| - otherRelevantIssues | | Optional string |
+| - monitoringMethod | | Optional string |
+| improvementOptionEvaluations [] | | Array of improvement option evaluations, must contain one marked as `isMediumTermPlanBase` |
+| - reference | | A string reference value |
+| - calculationMethodology | |  |
+| - householdContribution | |  |
+| - measuresEvaluated [] | | |
+| -  - yourReference | | A string reference value |
+| -  - workTypeCode | | Value from the taxonomy [MeasureTypesByMatrixType](#measuretypesbymatrixtype) |
+| -  - product | |  |
+| -  - measureEligibilityStatus | | Value from the taxonomy [MeasureEligibilityStatusTypes](#measureeligibilitystatustypes) |
+| -  - measureInstallationCost | | Decimal of the install cost |
+| -  - annualFuelCostSaving | | Decimal of the annual fuel cost saving |
+| -  - potentialEnergyRating | | Number of the potential energy rating  |
+| -  - repaymentYears | | Decimal of the number of years to repay |
+| -  - annualCO2Savings | | Decimal of the CO2 Savings |
+| -  - carbonCostEffectiveness | | Decimal of the carbon cost effectiveness |
+| -  - sapSavings | | Decimal range 0-100. Mandatory when the `measureEligibilityStatus` is 'Eligible' |
+| -  - productInstalledUnitOfMeasure | | 'Items' or 'm2' required when measureEligibilityStatus is 'Eligible' |
+| -  - productInstalledValue | | Numeric value to indicate how many items or m2 of product evaluated |
+| - intendedOutcomes | |  |
+| - - reductionEnergyUse | | true / false |
+| - - reductionInEnergyCosts | | true / false |
+| - - reductionsInEmissions | | true / false |
+| - - improvementsInInternalComfort | | true / false |
+| - - improvementsOfIAQ | | true / false |
+| - - eliminationDampCondensationMould | | true / false |
+| - - reduceRiskOverheating | | true / false |
+| - - improvementsInEnergyRating | | true / false |
+| - - meetPerformanceStandard | | true / false |
+| - - improvementsInUsefulnessSustainability | | true / false |
+| - - protectBuildingAgainstDecay | | true / false |
+| - - resistanceFloodAndWaterPenetration | | true / false |
+| - - protectionArchitecturalHeritage | | true / false |
+| - - integrationEEMSAndOtherImprovements | | true / false |
+| - - otherRelevantIssues | | Optional string |
+| - - monitoringMethod | | Optional string |
+| - isMediumTermPlanBase | | true if this is the Improvement Option Evaluation to be taken forward for the Medium Term Improvement Plan; otherwise false |
+| mediumTermImprovementPlan | |  |
+| - reference | | A string reference value |
+| - savingsMoney | |  |
+| - savingsSAPPoints | |  |
+| - stages [] | |  |
+| - - sequence | | Number indicating the sequence the stages will be conducted |
+| - - dependentStages [] | | Optional array containing numbers of stages that will be completed prior to this stage |
+| - - savingsMoney | |  |
+| - - savingsSAPPoints | |  |
+| - - stageDurationInWeeks | |  |
+| - - keyEventComments | |  |
+| - - inScopeCurrentProject | | Your plan must have at least one stage in scope. Anything in scope is expected to be lodged within this project. This affects how the early project fee is calculated. |
+| - - improvementOptionEvaluationMeasureReferences [] | | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
+| riskAssessment | 2019 only |  |
+| - declaredProjectRisk | | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
+| - highestRiskCombination | | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
+| - installerQualityAssuranceClaimed | | true, false, null |
+| retrofitDesigns [] | | |
+| - isRegisteredWithTrustmark | | true if the designer is registered with TrustMark; otherwise false |
+| - designerTMLN | | The TMLN of the Designer, required if `isRegisteredWithTrustmark`  |
+| - designerName | | String required if not `isRegisteredWithTrustmark` |
+| - designerQualification | | Value from the taxonomy [DesignerQualificationTypes](#designerqualificationtypes)  |
+| - improvementOptionEvaluationMeasureReferences [] | | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
+| - ventilationTreatmentType | | Value from the taxonomy [VentilationTreatmentTypes](#ventilationtreatmenttypes) |
+| - thermalBridgeRiskPresent | | true / false |
+| - thermalBridgeActionDescription | | Required if `thermalBridgeRiskPresent` |
+| - thermalBridgeTreatment | | Value from the taxonomy [ThermalBridgeTreatmentTypes](#thermalbridgetreatmenttypes) |
+| - defectResolutions [] | | Array of defects resolved with this design |
+| - - assessmentDefectId | | If an assessment defect, the `defectId` reference |
+| - - projectDefectYourReference | | If a project defect, the `yourReference` reference |
+| - - resolution | | String detailing the resolution |
+| - ventilationTreatmentStrategy | | Value from the taxonomy [VentilationTreatmentStrategyTypes](#ventilationtreatmentstrategytypes) |
+| - ventilationStrategyNotes | |  |
+| roles | |  |
+| - installerTMLNs [] | | Array of any TMLN of installers to be used |
+| - evaluatorTMLN | | TMLN of the Evaluator |
+| supportingDocumentAttachments [] | | Array of supporting documents  |
+| - fileUploadToken | | String as created [FileUploadToken](#fileuploadtoken) |
+| - filename | | Filename string provided to create the fileUploadToken |
+| - documentType | | Value from the taxonomy [DocumentTypes](#documenttypes) |
+| - comments | | Optional string |
+| notes [] | | Optional array of strings |
+| highRiskQuestions                 | | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example. |
+| - question                        | | Question string provided by the taxonomy |
+| - answer                          | | Answer string from the potential answer options provided by the taxonomy |
 
 ### LodgementSubmit
 
@@ -427,7 +434,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | planStageSequence |  |
 | measures [] | Array of measures installed |
 | - improvementOptionEvaluationMeasureReference | Reference `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
-| - workTypeCode | Value from the taxonomy [MeasureTypes](#measuretypes) |
+| - workTypeCode | Value from the taxonomy [MeasureTypesByMatrixType](#measuretypesbymatrixtype) |
 | - freeTextDetails | String that will appear on the certificate |
 | - percentageMeasureInstalled | `Yes` or `No` if 100% measures have been installed |
 | - installerReferenceNumber |  |
@@ -628,7 +635,7 @@ This endpoint can also add measures if an existing measure has been submitted wi
 | - measureId                       | MeasureId reference assigned from the LodgementSubmit call. Optional - see the note above `Creating a New Measure` |
 | - improvementOptionEvaluationMeasureId | ImprovementOptionEvaluationMeasureId reference assigned from the LodgementSubmit call. Optional - see the note above `Creating a New Measure` |
 | - umr                             | String the measure to amend |
-| - workTypeCode                    | Value from the taxonomy [MeasureTypes](#measuretypes) |
+| - workTypeCode                    | Value from the taxonomy [MeasureTypesByMatrixType](#measuretypesbymatrixtype) |
 | - freeTextDetails                 | String that will appear on the certificate |
 | - installedDate                   |  |
 | - handoverDate                    |  |
@@ -649,6 +656,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 
 | Field                             | Information                              |
 | --------------------------------- | ---------------------------------------- |
+| lodgementType | Value from the taxonomy [LodgementTypes](#lodgementtypes) |
 | yourProjectReference              | Your reference for the project |
 | address                           |  |
 | - number                          |  |
@@ -679,7 +687,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - propertyConstruction            | Value from the taxonomy [PropertyConstructionTypes](#propertyconstructiontypes) |
 | - propertyBedrooms                | Value from the taxonomy PropertyBedroomTypes |
 | measures []                       | Array of measures installed |
-| - workTypeCode                    | Value from the taxonomy [MeasureTypes](#measuretypes) |
+| - workTypeCode                    | Value from the taxonomy [MeasureTypesByMatrixType](#measuretypesbymatrixtype) |
 | - freeTextDetails                 | String that will appear on the certificate |
 | - percentageMeasureInstalled      | `Yes` or `No` if 100% measures have been installed |
 | - installerReferenceNumber        |  |
@@ -855,19 +863,19 @@ Returns a list of options for `riskAssessment.declaredProjectRisk` in the Projec
 
 > GET /Taxonomies/DefectLocationTypes
 
-Returns a list of options for `defects.locations` in the AssessmentSubmit request and `projectDefects.locations` in the ProjectStart.
+Returns a list of options for `defects.locations` in the [AssessmentSubmit](#assessmentsubmit) request and `projectDefects.locations` in the ProjectStart.
 
 #### DefectTypes
 
 > GET /Taxonomies/DefectTypes
 
-Returns a list of options for `defects.defectType` in the AssessmentSubmit request and `projectDefects.defectType` in the ProjectStart.
+Returns a list of options for `defects.defectType` in the [AssessmentSubmit](#assessmentsubmit) request and `projectDefects.defectType` in the ProjectStart.
 
 #### DefectSeverityTypes
 
 > GET /Taxonomies/DefectSeverityTypes
 
-Returns a list of options for `defects.severity` in the AssessmentSubmit request and `projectDefects.severity` in the ProjectStart.
+Returns a list of options for `defects.severity` in the [AssessmentSubmit](#assessmentsubmit) request and `projectDefects.severity` in the ProjectStart.
 
 #### DesignerQualificationTypes
 
@@ -879,7 +887,28 @@ Returns a list of options for `retrofitDesigns.designerQualification` in the Pro
 
 > GET /Taxonomies/DocumentTypes
 
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+>
 Returns a list of options for `documentType` in the SupportingDocument requests and `supportingDocumentAttachments.documentType` in the AssessmentSubmit and ProjectStart requests.
+
+#### DocumentsByMatrixType
+
+> POST /Taxonomies/DocumentsByMatrixType
+
+Returns a list of options for `documentType` in the SupportingDocument requests and `supportingDocumentAttachments.documentType` in the [AssessmentSubmit](#assessmentsubmit) and [ProjectStart](#projectstart) requests.
+
+| Field                      | Information                              |
+| -------------------------- | ---------------------------------------- |
+| matrixType                 | Either you `projectType` for [Projects](#projectstart) or `lodgementType` for [Standalone Lodgements](#standalonelodgementsubmit)                        |
+| pasVersion                 | For projects the `pasVersion` you have already specified. Not required for [Standalone Lodgements](#standalonelodgementsubmit)    |
+
+```json
+{
+  "matrixType": "string",
+  "pasVersion": "string"
+}
+```
 
 #### ExistingVentilationProvidedTypes
 
@@ -891,7 +920,7 @@ Returns a list of options for `ventilation.existingVentilationProvided` in the A
 
 > GET /Taxonomies/ExposureZoneTypes
 
-Returns a list of options for `context.exposureZone` in the AssessmentSubmit request.
+Returns a list of options for `context.exposureZone` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### GuaranteeTypes
 
@@ -903,7 +932,7 @@ Returns a list of guarantee types for which the `name` value can be used with th
 
 > GET /Taxonomies/HighestRiskCombinationTypes
 
-Returns a list of options for `riskAssessment.highestRiskCombination` in the ProjectStart request.
+Returns a list of options for `riskAssessment.highestRiskCombination` in the [ProjectStart](#projectstart) request.
 
 #### InnovationMeasureTypes
 
@@ -911,11 +940,121 @@ Returns a list of options for `riskAssessment.highestRiskCombination` in the Pro
 
 Returns a list of innovation measure types for which a value from `approvedProducts` can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
 
+#### LodgementTypes
+
+> GET /Taxonomies/LodgementTypes
+
+Returns a list of options for `lodgementType` in the [Standalone Lodgements](#standalonelodgementsubmit) request.
+
+#### LocalAuthorityProjectsHUG
+
+> GET /Taxonomies/LocalAuthorityProjectsHUG
+
+Returns a list of HUG only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the [ProjectStart](#projectstart) request.
+
+#### LocalAuthorityProjectsLADS
+
+> GET /Taxonomies/LocalAuthorityProjectsLADS
+
+Returns a list of LADS only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the [ProjectStart](#projectstart) request.
+
+#### LocalAuthorityProjectsSHDF
+
+> GET /Taxonomies/LocalAuthorityProjectsSHDF
+
+Returns a list of SHDF only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the [ProjectStart](#projectstart) request.
+
+#### MeasureEligibilityStatusTypes
+
+> GET /Taxonomies/MeasureEligibilityStatusTypes
+
+Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.measureEligibilityStatus` in the [ProjectStart](#projectstart) request.
+
+#### MeasureTypesByMatrixType
+
+> POST /Taxonomies/MeasureTypesByMatrixType
+
+Provide a body to get measure types that will be relevant for your project or lodgement.
+
+| Field                      | Information                              |
+| -------------------------- | ---------------------------------------- |
+| matrixType                 | Either you `projectType` for [Projects](#projectstart) or `lodgementType` for [Standalone Lodgements](#standalonelodgementsubmit)                        |
+| pasVersion                 | For projects the `pasVersion` you have already specified. Not required for [Standalone Lodgements](#standalonelodgementsubmit)    |
+
+```json
+{
+  "matrixType": "string",
+  "pasVersion": "string"
+}
+```
+
+Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the [ProjectStart](#projectstart) request.
+
+#### MeasureTypes
+
+> GET /Taxonomies/MeasureTypes
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request. To filter for ECO4 only check the property eco4Name has a value, or use [MeasureTypesECO4](#measuretypeseco4) instead to get a filtered list.
+
+#### MeasureTypesECO4
+
+> GET /Taxonomies/MeasureTypesECO4
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of ECO4 only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+
+#### MeasureTypesHUG
+
+> GET /Taxonomies/MeasureTypesHUG
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of HUG only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+
+#### MeasureTypesLADS
+
+> GET /Taxonomies/MeasureTypesLADS
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of LADS only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+
+#### MeasureTypesSHDF
+
+> GET /Taxonomies/MeasureTypesSHDF
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+
+#### MeasureTypesWHD
+
+> GET /Taxonomies/MeasureTypesWHD
+
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [MeasureTypesByMatrixType](#measuretypesbyprojecttype) instead.
+
+Returns a list of WHD only options for `measure.workTypeCode` in the ProjectStart request.
+
+#### PASVersions
+
+> GET /Taxonomies/PASVersions
+
+Returns a list of options for `pasVersion` in the [AssessmentSubmit](#assessmentsubmit)  request.
+
 #### ProjectTypes
 
 > GET /Taxonomies/ProjectTypes
 
-Returns a list of options for `projectType` in the ProjectStart request.
+Returns a list of options for `projectType` in the [ProjectStart](#projectstart) request.
 
 #### ProjectQuestions
 
@@ -927,121 +1066,76 @@ Returns a list of required questions and their answer options for `highRiskQuest
 
 > GET /Taxonomies/PropertyAgeTypes
 
-Returns a list of options for `propertyInformation.propertyAge` in the ProjectStart request.
+Returns a list of options for `propertyInformation.propertyAge` in the [ProjectStart](#projectstart) request.
 
 #### PropertyConstructionTypes
 
 > GET /Taxonomies/PropertyConstructionTypes
 
-Returns a list of options for `propertyInformation.propertyConstruction` in the ProjectStart request and `context.propertyConstruction` in the AssessmentSubmit request.
+Returns a list of options for `propertyInformation.propertyConstruction` in the ProjectStart request and `context.propertyConstruction` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### PropertyDetachmentTypes
 
 > GET /Taxonomies/PropertyDetachmentTypes
 
-Returns a list of options for `propertyInformation.propertyDetachment` in the ProjectStart request.
+Returns a list of options for `propertyInformation.propertyDetachment` in the [ProjectStart](#projectstart) request.
 
 #### PropertyTypes
 
 > GET /Taxonomies/PropertyTypes
 
-Returns a list of options for `propertyInformation.propertyType` in the ProjectStart request.
-
-#### MeasureEligibilityStatusTypes
-
-> GET /Taxonomies/MeasureEligibilityStatusTypes
-
-Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.measureEligibilityStatus` in the ProjectStart request.
-
-#### MeasureTypes
-
-> GET /Taxonomies/MeasureTypes
-
-Returns a list of options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request. To filter for ECO4 only check the property eco4Name has a value, or use [MeasureTypesECO4](#measuretypeseco4) instead to get a filtered list.
-
-#### MeasureTypesECO4
-
-> GET /Taxonomies/MeasureTypesECO4
-
-Returns a list of ECO4 only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
+Returns a list of options for `propertyInformation.propertyType` in the [ProjectStart](#projectstart) request.
 
 #### SchemeOptions
 
 > GET /Taxonomies/SchemeOptions
 
-Returns a list of options for `schemeId` in the ProjectStart request.
+Returns a list of options for `schemeId` in the [ProjectStart](#projectstart) request.
 
 #### StatutoryLimitationTypes
 
 > GET /Taxonomies/StatutoryLimitationTypes
 
-Returns a list of options for `context.statutoryLimitations` in the AssessmentSubmit request.
+Returns a list of options for `context.statutoryLimitations` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### TenureTypes
 
 > GET /Taxonomies/TenureTypes
 
-Returns a list of options for `tenure.premisesTenure` in the ProjectStart request.
+Returns a list of options for `tenure.premisesTenure` in the [ProjectStart](#projectstart) request.
 
 #### ThermalBridgeTreatmentTypes
 
 > GET /Taxonomies/ThermalBridgeTreatmentTypes
 
-Returns a list of options for `retrofitDesigns.thermalBridgeTreatment` in the ProjectStart request.
+Returns a list of options for `retrofitDesigns.thermalBridgeTreatment` in the [ProjectStart](#projectstart) request.
 
 #### VentilationTreatmentStrategyTypes
 
 > GET /Taxonomies/VentilationTreatmentStrategyTypes
 
-Returns a list of options for `retrofitDesigns.ventilationTreatmentStrategy` in the ProjectStart request.
+Returns a list of options for `retrofitDesigns.ventilationTreatmentStrategy` in the [ProjectStart](#projectstart) request.
 
 #### VentilationTreatmentTypes
 
 > GET /Taxonomies/VentilationTreatmentTypes
 
-Returns a list of options for `retrofitDesigns.ventilationTreatmentType` in the ProjectStart request.
+Returns a list of options for `retrofitDesigns.ventilationTreatmentType` in the [ProjectStart](#projectstart) request.
 
 #### VentilationTypes
 
 > GET /Taxonomies/VentilationTypes
 
+>[!WARNING]
+> This taxonomy is set to be depreciated. Use [VentilationTypesByPASVersion](#ventilationtypesbypasversion) instead.
+
 Returns a list of options for `ventilation.ventilationType` in the AssessmentSubmit request.
 
-#### MeasureTypesLADS
+#### VentilationTypesByPASVersion
 
-> GET /Taxonomies/MeasureTypesLADS
+> POST /Taxonomies/VentilationTypesByPASVersion
 
-Returns a list of LADS only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
-
-#### LocalAuthorityProjectsLADS
-
-> GET /Taxonomies/LocalAuthorityProjectsLADS
-
-Returns a list of LADS only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
-
-#### MeasureTypesHUG
-
-> GET /Taxonomies/MeasureTypesHUG
-
-Returns a list of HUG only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
-
-#### LocalAuthorityProjectsHUG
-
-> GET /Taxonomies/LocalAuthorityProjectsHUG
-
-Returns a list of HUG only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
-
-#### MeasureTypesSHDF
-
-> GET /Taxonomies/MeasureTypesSHDF
-
-Returns a list of SHDF only options for `improvementOptionEvaluations.measuresEvaluated.workTypeCode` in the ProjectStart request.
-
-#### LocalAuthorityProjectsSHDF
-
-> GET /Taxonomies/LocalAuthorityProjectsSHDF
-
-Returns a list of SHDF only options for `localAuthorityProjectPhase` and `localAuthorityProjectKey` in the ProjectStart request.
+Returns a list of options for `ventilation.ventilationType` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### WHDWorkConductedValues
 
@@ -1060,22 +1154,6 @@ Returns options for standalone lodgement type WHD to populate `measure.whdReplac
 > GET /Taxonomies/WHDQuestions
 
 Returns the list of questions that must be provided for WHD standalone lodgements and the potential answer options.
-
-#### MeasureTypesWHD
-
-> GET /Taxonomies/MeasureTypesWHD
-
-Returns a list of WHD only options for `measure.workTypeCode` in the ProjectStart request.
-
-#### MeasureTypesByProjectType
-
-> POST /Taxonomies/MeasureTypesByProjectType
-
-Returns a list of measures for the requested project type.
-
-| Field                             | Information                              |
-| --------------------------------- | ---------------------------------------- |
-| projectType                  | The project type to filter the measure types on, e.g. ECO4, LADS, HUG, WHD, SHDF, LicencePlus |
 
 ## RdSAP Files
 
