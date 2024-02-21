@@ -6,7 +6,7 @@ First Published April 22
 > PAS 2035/2030 2023 has been published by BSI and is [available here](https://www.bsigroup.com/en-GB/standards/pas-2035-2030/).
 
 > [!NOTE]
-> PAS 2035 [2023] is now available for use. The TrustMark Retrofit Integration API has been updated to support the new PAS 2035 [2023] standard, the change is non-breaking and PAS 2035 [2019] is assumed by default. The API will continue to support the previous PAS 2035 [2019] standard until further notice.
+> PAS 2035 [2023] is now available for use. The TrustMark Retrofit Integration API has been updated to support the new PAS 2035 [2023] standard, the change is non-breaking and PAS 2035 [2019] is assumed by default. The API will continue to support the previous PAS 2035 [2019] standard until further notice. For example requests see the [Example Requests](#example-requests).
 
 
 > Supporting [Sandbox Swagger](https://api.sandbox.retrofitintegration.data-hub.org.uk/swagger/index.html)
@@ -1171,6 +1171,8 @@ In order to use MCS measures you must provide an MCS Certificate Reference that 
 
 If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvisio.com/editor) illustrates data on graphs well and can help with the understanding of the Assessment, Project and Lodgement requests.
 
+## Example Requests
+
 * [PAS2023 Assessment Example](./example-assessment-pas2023.md)
 
 * [PAS2023 Project Example](./example-project-eco4-pas2023.md)
@@ -1212,12 +1214,6 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [ProjectAmend Example](./ReadmeIntegration-example-projectamend.md)
 
 * [UPRN Check Example](./ReadmeIntegration-example-uprn-check-example.md)
-
-## Postman Examples
-
-An example collection is available to import, copy this link `https://www.getpostman.com/collections/5507b8404d64566f477c` and use the 'Import From Link' feature in Postman. Once imported update the variables in the API Collection with your own tm-api-key as mentioned in [Identity](#identity)
-
-If you don't have Postman installed, you can get a copy here https://www.postman.com
 
 ## Certificates
 
