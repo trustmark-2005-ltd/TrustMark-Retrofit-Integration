@@ -851,7 +851,7 @@ Checks for existing projects under the GBIS fund against the project owner TMLN 
 
 > GET /Taxonomies/CombustionVentilationAcceptableTypes
 
-> >[!WARNING]
+>[!WARNING]
 > This taxonomy is set to be depreciated. Use [VentilationTypesByPASVersion](#ventilationtypesbypasversion) instead.
 
 Returns a list of options for `context.combustionVentilationAcceptable` in the AssessmentStart request.
@@ -898,7 +898,7 @@ Returns a list of options for `retrofitDesigns.designerQualification` in the Pro
 
 >[!WARNING]
 > This taxonomy is set to be depreciated. Use [DocumentsByMatrixType](#documentsbymatrixtype) instead.
->
+
 Returns a list of options for `documentType` in the SupportingDocument requests and `supportingDocumentAttachments.documentType` in the AssessmentSubmit and ProjectStart requests.
 
 #### DocumentsByMatrixType
