@@ -230,7 +230,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - numberOccupants                 | | Number |
 | - specialConsiderationsApplicable | | true / false |
 | ventilation                       | |  |
-| - existingVentilationProvided     | 2023 can require Ventiliation Defect | Value from the taxonomy [ExistingVentilationProvidedTypes](#existingventilationprovidedtypes) |
+| - existingVentilationProvided     | 2023 can require Ventiliation Defect | Value from the taxonomy [ExistingVentilationProvidedTypesByPASVersion](#existingventilationprovidedtypesbypasversion) |
 | - ventilationType                 | | Value from the taxonomy [VentilationTypes](#ventilationtypes) |
 | - ventilationNotes                | | Optional string |
 | - preRetrofitPulseAirTightnessTestRating | |  |
@@ -241,7 +241,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - areaSignificanceIdentified      | 2023 only | true / false. Only provided with propertyConstruction 'Traditional, not protected -
 | context                           | |  |
 | - buildingOrientation             | | Optional number 0 - 360 |
-| - combustionVentilationAcceptable | 2023 can require Ventiliation Defect | Value from the taxonomy CombustionVentilationAcceptableTypes |
+| - combustionVentilationAcceptable | 2023 can require Ventiliation Defect | Value from the taxonomy [CombustionVentilationAcceptableTypesByPASVersion](#combustionventilationacceptabletypesbypasversion) |
 | - exposureZone                    | | Value from the taxonomy [ExposureZoneTypes](#exposurezonetypes) |
 | - planningConstraints             | | true / false |
 | - planningComments                | | Required if planningConstraints is true |
@@ -851,7 +851,16 @@ Checks for existing projects under the GBIS fund against the project owner TMLN 
 
 > GET /Taxonomies/CombustionVentilationAcceptableTypes
 
+> >[!WARNING]
+> This taxonomy is set to be depreciated. Use [VentilationTypesByPASVersion](#ventilationtypesbypasversion) instead.
+
 Returns a list of options for `context.combustionVentilationAcceptable` in the AssessmentStart request.
+
+#### CombustionVentilationAcceptableTypesByPASVersion
+
+> POST /Taxonomies/CombustionVentilationAcceptableTypesByPASVersion
+
+Returns a list of options for `context.combustionVentilationAcceptable` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### DeclaredProjectRiskTypes
 
@@ -915,6 +924,12 @@ Returns a list of options for `documentType` in the SupportingDocument requests 
 > GET /Taxonomies/ExistingVentilationProvidedTypes
 
 Returns a list of options for `ventilation.existingVentilationProvided` in the AssessmentSubmit request.
+
+#### ExistingVentilationProvidedTypesByPASVersion
+
+> POST /Taxonomies/ExistingVentilationProvidedTypesByPASVersion
+
+Returns a list of options for `ventilation.existingVentilationProvided` in the [AssessmentSubmit](#assessmentsubmit) request.
 
 #### ExposureZoneTypes
 
