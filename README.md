@@ -458,7 +458,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteeName | Value from the taxonomy [GuaranteeTypes](#guaranteetypes) |
 | - guaranteeStartDate |  |
 | - guaranteePolicyReference |  |
-| - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
+| - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct.. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
 | workInvoiceTotal                  | Decimal |
 | customerContribution              | Decimal  |
 | supportingDocumentAttachments [] | Array of supporting documents |
@@ -711,7 +711,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - guaranteeName                   | Value from the taxonomy [GuaranteeTypes](#guaranteetypes) |
 | - guaranteeStartDate              |  |
 | - guaranteePolicyReference        |  |
-| - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct |
+| - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
 | - whdReplaceWhatMeasure             | Required for lodgementType WHD. Must be a value from taxonomy [WHDReplaceWhatMeasureValues](#whdreplacewhatmeasurevalues) |
 | - whdWorkConducted                  | Required for lodgementType WHD. Must be a value from taxonomy [WHDWorkConductedValues](#whdworkconductedvalues) |
 | supportingDocumentAttachments []  | Array of supporting documents |
@@ -844,6 +844,41 @@ Checks for existing projects under the GBIS fund against the project owner TMLN 
   "code": "UPRN_EXISTS_FIRST"
 }
 ```
+
+### MCSCertificate
+
+> POST /Data/MCSCertificate
+
+Allows warming of an MCS Certificate. This will pre-fetch the MCS certfiicate from the MCS API and store it in the TrustMark API for a subsequent call to the [LodgementSubmit](#lodgementsubmit) or [StandaloneLodgementSubmit](#standalonelodgementsubmit) calls. Call this endpoint for each certificate to be available for the lodgement, if all return a 200 response then proceed with the lodgemnt submission. It is recommended to manage MCS timeouts.
+
+| Field                      | Information                              |
+| -------------------------- | ---------------------------------------- |
+| certificateNumber          | The MCS certificate number               |
+
+#### Request
+
+```json
+{
+  "version": "string",
+  "identity": {
+    "trustmarkId": "string"
+  },
+  "request": {
+    "certificateNumber": "string"
+  }
+}
+```
+
+#### Response
+
+HTTP 200 OK. This will not return the MCS certificate, but will store it in the TrustMark API for a subsequent call to the [LodgementSubmit](#lodgementsubmit) or [StandaloneLodgementSubmit](#standalonelodgementsubmit) calls.
+
+#### MCS Measures and Testing
+
+In order to use MCS measures you must provide an MCS Certificate Reference that can be validated. Therefore, the certificate reference must exist in the MCS Testing Database and the returned certificate must have a matching property postcode and technology.
+
+`MCS-01109079-R` is a valid testing mcsCertificateReference value and must match against a postcode of `IP7 6RL` and an MCS technology of `2`, for example `DW-305` would be a valid measure type.
+
 
 ### Taxonomies
 
@@ -1175,12 +1210,6 @@ Returns the list of questions that must be provided for WHD standalone lodgement
 RdSAP files are required at Assessment and Project Completion stages. The xml content of the file must be supplied in the fields, if you are exploring the API and need an online tool to escape characters then https://www.freeformatter.com/json-escape.html works well.
 
 TrustMark is not responsible for external websites and their functionality or security, we advise that only non-personal test data is used with any of the tools listed.
-
-## MCS Measures and Testing
-
-In order to use MCS measures you must provide an MCS Certificate Reference that can be validated. Therefore, the certificate reference must exist in the MCS Testing Database and the returned certificate must have a matching property postcode and technology.
-
-`MCS-01109079-R` is a valid testing mcsCertificateReference value and must match against a postcode of `IP7 6RL` and an MCS technology of `2`, for example `DW-305` would be a valid measure type.
 
 ## Visualising
 
