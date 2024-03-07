@@ -320,6 +320,9 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - hasEvidence | | true / false |
 | - actualRepairCost | |  |
 | - toBeAddressedInProject | | true / false |
+| - evidenceImageUrl []| | Optional array of fileUploadToken objects |
+| -  - fileUploadToken | | String as created [FileUploadToken](#fileuploadtoken) |
+| -  - filename | | Filename string provided to create the fileUploadToken |
 | intendedOutcomes | | true / false |
 | - reductionEnergyUse | | true / false |
 | - reductionInEnergyCosts | | true / false |

@@ -58,7 +58,13 @@
         "destructiveTestsConducted": "string",
         "hasEvidence": true,
         "actualRepairCost": 0,
-        "toBeAddressedInProject": true
+        "toBeAddressedInProject": true,
+        "evidenceImageUrl": [
+          {
+            "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+            "filename": "evidence1.png"
+          }
+        ]
       }
     ],
     "intendedOutcomes": {
