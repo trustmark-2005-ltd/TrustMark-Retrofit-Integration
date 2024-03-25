@@ -1,5 +1,5 @@
 
-### GBIS Project Example
+### ECO4 Project PAS2035 [2023] Example
 
 [Return](./ReadmeIntegration.md)
 
@@ -7,18 +7,17 @@
 {
   "version": "2022-04-01",
   "identity": {
-    "trustmarkId": "api-70232d27-eccc-488e-9501-624296e91f1e"
+    "trustmarkId": "[YOUR_API_KEY]"
   },
-  "clientRequestToken" : "3c6b174f3-0486-50c1-a2f2-aa61d1cf5525",
+  "clientRequestToken" : "e9bc274f3-0486-40c1-a2f2-aa61d1cf5525",
   "request": {
-    "assessmentReference": "A1024",
+    "assessmentReference": "A16063",
     "ownerTMLN": "10000",
     "schemeId": "testscheme",
     "fundingOrganisationName": "string",
     "fundingComment": "string",
-    "projectType": "GBIS",
-    "yourProjectReference": "api_gbis_1",
-    "acceptUPRNCheck": false,
+    "projectType": "ECO4",
+    "yourProjectReference": "example_api_eco4_2023",
     "tenure": {
       "premisesTenure": "Owner Occupied",
       "residentName": "string",
@@ -47,7 +46,7 @@
     ],
     "projectDefects": [
       {
-        "yourReference": "DEMO_PD_01",
+        "yourReference": "PD01",
         "defectType": "Leaks",
         "comment": "string",
         "severity": "Low",
@@ -59,13 +58,7 @@
         "destructiveTestsConducted": "string",
         "hasEvidence": true,
         "actualRepairCost": 0,
-        "toBeAddressedInProject": true,
-        "evidenceImageUrl": [
-          {
-            "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
-            "filename": "evidence1.png"
-          }
-        ]
+        "toBeAddressedInProject": true
       }
     ],
     "intendedOutcomes": {
@@ -94,7 +87,7 @@
         "measuresEvaluated": [
           {
             "yourReference": "ioem1",
-            "workTypeCode": "DW-101",
+            "workTypeCode": "DW-479",
             "product": "string",
             "measureEligibilityStatus": "Eligible",
             "measureInstallationCost": 0,
@@ -151,10 +144,6 @@
         }
       ]
     },
-    "riskAssessment": {
-      "declaredProjectRisk": "A",
-      "highestRiskCombination": "Green"
-    },
     "retrofitDesigns": [
       {
         "isRegisteredWithTrustmark": true,
@@ -170,11 +159,11 @@
         "thermalBridgeRiskPresent": true,
         "defectResolutions": [
           {
-            "assessmentDefectId": "6h_rdZ7olzrgOpRD_0mAZ",
+            "assessmentDefectId": "Vent001",
             "resolution": "string"
           },
           {
-            "projectDefectYourReference": "DEMO_PD_01",
+            "projectDefectYourReference": "PD01",
             "resolution": "string"
           }
         ],
@@ -196,40 +185,34 @@
     },
     "supportingDocumentAttachments": [
       {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
-        "documentType": "Risk assessment",
-        "comments": "string",
-        "filename": "TestRA.pdf"
-      },
-      {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "fileUploadToken": "00000000000000",
         "documentType": "Intended outcomes",
         "comments": "string",
-        "filename": "TestRA.pdf"
+        "filename": "Filename.pdf"
       },
       {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "fileUploadToken": "00000000000000",
         "documentType": "Improvement option evaluation",
         "comments": "string",
-        "filename": "TestRA.pdf"
+        "filename": "Filename.pdf"
       },
       {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "fileUploadToken": "00000000000000",
         "documentType": "Medium term improvement plan",
         "comments": "string",
-        "filename": "TestRA.pdf"
+        "filename": "Filename.pdf"
       },
       {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
+        "fileUploadToken": "00000000000000",
         "documentType": "Retrofit design",
         "comments": "string",
-        "filename": "TestRA.pdf"
+        "filename": "Filename.pdf"
       },
       {
-        "fileUploadToken": "rac-0c815e54-429d-40d8-98b5-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
-        "documentType": "Pre-Design Building Survey",
+        "fileUploadToken": "00000000000000",
+        "documentType": "Pre-Installation Building Inspection",
         "comments": "string",
-        "filename": "TestRA.pdf"
+        "filename": "Filename.pdf"
       }
     ],
     "notes": [
