@@ -58,8 +58,6 @@
       "resistanceFloodAndWaterPenetration": false,
       "protectionArchitecturalHeritage": false,
       "integrationEEMSAndOtherImprovements": false,
-      "improveManagementOfMoisture": true,
-      "improveResilienceToClimateChange": true,
       "otherRelevantIssues": "string",
       "monitoringMethod": "string"
     },
@@ -116,8 +114,6 @@
           "resistanceFloodAndWaterPenetration": false,
           "protectionArchitecturalHeritage": false,
           "integrationEEMSAndOtherImprovements": false,
-          "improveManagementOfMoisture": true,
-          "improveResilienceToClimateChange": true,
           "otherRelevantIssues": "string",
           "monitoringMethod": "string"
         },
