@@ -189,7 +189,7 @@ The response gives two key pieces back, the first is the `uploadUrl`. You need t
 ```json
 {
   "fileUploadToken": "rac-0c815e54-429d-40d8-98b2-37f8c7913181t20220426t9959c6afec404be5b28ff57544acb6a2t132954467702961840",
-  "uploadUrl": "https://uat-retrofit-files-api.s3.eu-west-1.amazonaws.com/uploads/rac-0c815e54-429d-40d8-98b5-37f8c7913181/20220401/9959c6afec404be5b28ff57544acb6a2/132954467702961840-TestRA.pdf?X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIART62XRCSLHWGUDHO/20220426/eu-west-1/s3/aws4_request&X-Amz-Date=20220426T113930Z&X-Amz-SignedHeaders=host&X-Amz-Signature=8fdd521f0c048e67161430577b3dd46b227481f2f6de4cc3cdf018945907c72c"
+  "uploadUrl": "https://uat-retrofit-files-api.s3.eu-west-1.amazonaws.com/uploads/*********-TestRA.pdf?X-Amz-Expires=300&X-Amz-Algorithm=*****&X-Amz-Credential=******************&X-Amz-Date=*******&X-Amz-SignedHeaders=host&X-Amz-Signature=********"
 }
 ```
 
@@ -338,6 +338,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - resistanceFloodAndWaterPenetration | | true / false |
 | - protectionArchitecturalHeritage | | true / false |
 | - integrationEEMSAndOtherImprovements | | true / false |
+| - improveManagementOfMoisture | 2023 only | true / false |
+| - improveResilienceToClimateChange | 2023 only | true / false |
 | - otherRelevantIssues | | Optional string |
 | - monitoringMethod | | Optional string |
 | improvementOptionEvaluations [] | | Array of improvement option evaluations, must contain one marked as `isMediumTermPlanBase` |
@@ -373,6 +375,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - resistanceFloodAndWaterPenetration | | true / false |
 | - - protectionArchitecturalHeritage | | true / false |
 | - - integrationEEMSAndOtherImprovements | | true / false |
+| - - improveManagementOfMoisture | 2023 only | true / false |
+| - - improveResilienceToClimateChange | 2023 only | true / false |
 | - - otherRelevantIssues | | Optional string |
 | - - monitoringMethod | | Optional string |
 | - isMediumTermPlanBase | | true if this is the Improvement Option Evaluation to be taken forward for the Medium Term Improvement Plan; otherwise false |
