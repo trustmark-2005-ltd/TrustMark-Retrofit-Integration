@@ -338,6 +338,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - resistanceFloodAndWaterPenetration | | true / false |
 | - protectionArchitecturalHeritage | | true / false |
 | - integrationEEMSAndOtherImprovements | | true / false |
+| - improveManagementOfMoisture | | true / false |
+| - improveResilienceToClimateChange | | true / false |
 | - otherRelevantIssues | | Optional string |
 | - monitoringMethod | | Optional string |
 | improvementOptionEvaluations [] | | Array of improvement option evaluations, must contain one marked as `isMediumTermPlanBase` |
@@ -373,6 +375,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - resistanceFloodAndWaterPenetration | | true / false |
 | - - protectionArchitecturalHeritage | | true / false |
 | - - integrationEEMSAndOtherImprovements | | true / false |
+| - - improveManagementOfMoisture | | true / false |
+| - - improveResilienceToClimateChange | | true / false |
 | - - otherRelevantIssues | | Optional string |
 | - - monitoringMethod | | Optional string |
 | - isMediumTermPlanBase | | true if this is the Improvement Option Evaluation to be taken forward for the Medium Term Improvement Plan; otherwise false |
