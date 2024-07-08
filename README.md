@@ -214,7 +214,7 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | assessorTMLN                      | | The TMLN of the Retrofit Assessor who conducted the Assessment |
 | assessorSchemeId                  | | A valid SchemeId the assessor is registered with to lodge this Assessment |
 | defects []                        | | Contains an array of any defects that have been identified |
-| - defectType                      | | Value from the taxonomy [DefectTypes](#defecttypes) |
+| - defectType                      | | Value from the taxonomy [DefectTypes](#defecttypes) \When 'Ventilation Defect' ResolutionBeforeRetrofit, Locations, Severity, EvidenceImageUrl are optional |
 | - comment                         | |  Optional string |
 | - severity                        | | Value from the taxonomy [DefectSeverityTypes](#defectseveritytypes) |
 | - locations []                    | | Array of values from the taxonomy [DefectLocationTypes](#defectlocationtypes) |
@@ -251,7 +251,6 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - statutoryLimitations []         | | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
 | - statutoryLimitationsComment     | | Optional string |
 | - isPublic     | | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
-
 
 
 ### Assessment
