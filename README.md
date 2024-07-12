@@ -737,8 +737,20 @@ Creates a project and single lodgement submission in a single API call. This is 
 | highRiskQuestions                 | Required for lodgementType WHD. Must contain array of all questions from taxonomy [WHDQuestions](#whdquestions) |
 | - question                        | Question string provided by the taxonomy |
 | - answer                          | Answer string from the potential answer options provided by the taxonomy |
+| funderId                          | Optional string to associate the lodgement to a funder from [FunderReference](#funderreference) |
 
 > To obtain the lodgement certificate use the [LodgementCertificate](#lodgementcertificate) call along with the `RetrofitProjectReference` and `LodgementId` provided from this response.
+
+#### FunderReference
+
+> POST /Data/GetFunderReference
+
+Retrieves the Funder details for a given Reference and matching Postcode.
+
+| Field                             | Information                              |
+| --------------------------------- | ---------------------------------------- |
+| postcode                          | string |
+| reference                         | string |
 
 ### ProjectCertificate
 
@@ -1260,6 +1272,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [WHD StandaloneLodgement Example](./ReadmeIntegration-example-whd-standalonelodgement.md)
 
 * [HIL StandaloneLodgement Example](./ReadmeIntegration-example-hil-standalonelodgement.md)
+
+* [StandaloneLodgement With Funder Example](./ReadmeIntegration-example-standalonelodgement_with_funder.md)
 
 * [Licence Plus Connected For Warmth StandaloneLodgement Example](./ReadmeIntegration-example-licenceplus-cfw-standalonelodgement.md)
 
