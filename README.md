@@ -1112,6 +1112,8 @@ Returns a list of options for `pasVersion` in the [AssessmentSubmit](#assessment
 
 Returns a list of options for `projectType` in the [ProjectStart](#projectstart) request.
 
+These are all the Project Matrix Types.
+
 #### ProjectQuestions
 
 > GET /Taxonomies/ProjectQuestions
@@ -1147,6 +1149,12 @@ Returns a list of options for `propertyInformation.propertyType` in the [Project
 > GET /Taxonomies/SchemeOptions
 
 Returns a list of options for `schemeId` in the [ProjectStart](#projectstart) request.
+
+#### StandaloneLodgementTypes
+
+Returns a list of options for `lodgementType` in the [StandaloneLodgementSubmit](standalonelodgementsubmit) request.
+
+These are all the Standalone Lodgement Matrix Types.
 
 #### StatutoryLimitationTypes
 
