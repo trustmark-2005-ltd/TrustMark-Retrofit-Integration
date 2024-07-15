@@ -1010,6 +1010,8 @@ Returns a list of options for `riskAssessment.highestRiskCombination` in the [Pr
 
 Returns a list of innovation measure types for which a value from `approvedProducts` can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
 
+Innovation measure can only exist on ECO or GBIS lodgements.
+
 #### LodgementTypes
 
 > GET /Taxonomies/LodgementTypes
