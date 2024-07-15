@@ -737,7 +737,9 @@ Creates a project and single lodgement submission in a single API call. This is 
 | highRiskQuestions                 | Required for lodgementType WHD. Must contain array of all questions from taxonomy [WHDQuestions](#whdquestions) |
 | - question                        | Question string provided by the taxonomy |
 | - answer                          | Answer string from the potential answer options provided by the taxonomy |
-| funderId                          | Optional string to associate the lodgement to a funder from [FunderReference](#funderreference) |
+| funderId                          | Optional string to associate the lodgement to a funder from [FunderReference](#funderreference). All 3 funder fields are required if a funder is to be associated |
+| funderReferencePostcode           | Optional string to associate the lodgement to a funder from [FunderReference](#funderreference). All 3 funder fields are required if a funder is to be associated |
+| funderReference                   | Optional string to associate the lodgement to a funder from [FunderReference](#funderreference). All 3 funder fields are required if a funder is to be associated |
 
 > To obtain the lodgement certificate use the [LodgementCertificate](#lodgementcertificate) call along with the `RetrofitProjectReference` and `LodgementId` provided from this response.
 

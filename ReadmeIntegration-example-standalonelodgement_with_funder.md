@@ -56,6 +56,8 @@
     "authenticationNumber": "string",
     "confidenceLevel": 0,
     "funderId": "string",
+    "funderReference": "string",
+    "funderReferencePostcode": "string",
     "measures": [
       {
         "workTypeCode": "DW-101",
