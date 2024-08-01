@@ -92,7 +92,7 @@ A version value of `2022-04-01` should be supplied.
 
 ### ClientRequestToken
 
-A unique token to be provided by you to identify the request, these will expire after 10 minutes.
+A unique token to be provided by you to identify the request, these will expire after 10 minutes. Use to ensure that the request is idempotent.
 
 ### Identity
 
