@@ -394,7 +394,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - improvementOptionEvaluationMeasureReferences [] | | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
 | riskAssessment | 2019 only |  |
 | - declaredProjectRisk | | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
-| - highestRiskCombination | | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
+| - highestRiskCombination | | Value from the taxonomy [HighestRiskCombinationsTypes](#highestriskcombinationstypes) |
 | - installerQualityAssuranceClaimed | | true, false, null |
 | retrofitDesigns [] | | |
 | - isRegisteredWithTrustmark | | true if the designer is registered with TrustMark; otherwise false |
@@ -998,9 +998,9 @@ Returns a list of options for `context.exposureZone` in the [AssessmentSubmit](#
 
 Returns a list of guarantee types for which the `name` value can be used with the `measures.guaranteeName` in the LodgementSubmit request.
 
-#### HighestRiskCombinationTypes
+#### HighestRiskCombinationsTypes
 
-> GET /Taxonomies/HighestRiskCombinationTypes
+> GET /Taxonomies/HighestRiskCombinationsTypes
 
 Returns a list of options for `riskAssessment.highestRiskCombination` in the [ProjectStart](#projectstart) request.
 
