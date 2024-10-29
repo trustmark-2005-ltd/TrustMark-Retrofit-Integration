@@ -44,7 +44,7 @@ Payable by the party signing the Data Sharing Agreement.
 | Service                  | Fee (+VAT)               | Notes                                                            |
 | ------------------------ | ------------------------ | ---------------------------------------------------------------- |
 | Setup                    | £1500                    |                                                                  |
-| Annual Service Charge    | £1500                    |  Annual increase capped at RPI +3%                               |
+| Annual Service Charge    | £1500                    |  Annual increase capped at CPI +3%                               |
 | Price per activity       | 1.5% of transaction cost |  Calculated monthly based upon lodgement fees payable to TrustMark by the lodging party |
 
 
