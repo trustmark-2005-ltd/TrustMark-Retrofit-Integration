@@ -1313,7 +1313,9 @@ You can request an API Key to use the `TradeCheck Service` provided by TrustMark
 
 ### Endpoints
 
-UAT Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
+UAT Swagger: https://api.uat.trades.data-hub.org.uk/swagger/index.html
+
+Sandbox Swagger: https://api.sandbox.trades.data-hub.org.uk/swagger/index.html
 
 Production Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
 
