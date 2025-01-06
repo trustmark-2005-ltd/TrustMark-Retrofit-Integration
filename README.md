@@ -662,7 +662,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 
 | Field                             | Information                              |
 | --------------------------------- | ---------------------------------------- |
-| lodgementType | Value from the taxonomy [LodgementTypes](#lodgementtypes) |
+| lodgementType | Value from the taxonomy [StandaloneLodgementTypes](#standalonelodgementtypes) |
 | yourProjectReference              | Your reference for the project |
 | address                           |  |
 | - number                          |  |
@@ -1011,12 +1011,6 @@ Returns a list of options for `riskAssessment.highestRiskCombination` in the [Pr
 Returns a list of innovation measure types for which a value from `approvedProducts` can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
 
 Innovation measure can only exist on ECO or GBIS lodgements. You can find more info [https://www.ofgem.gov.uk/](https://www.ofgem.gov.uk/search?keyword=innovation%20measures)
-
-#### LodgementTypes
-
-> GET /Taxonomies/LodgementTypes
-
-Returns a list of options for `lodgementType` in the [Standalone Lodgements](#standalonelodgementsubmit) request.
 
 #### LocalAuthorityProjectsHUG
 
