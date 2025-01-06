@@ -1162,7 +1162,7 @@ Returns a list of options for `schemeId` in the [ProjectStart](#projectstart) re
 
 #### StandaloneLodgementTypes
 
-Returns a list of options for `lodgementType` in the [StandaloneLodgementSubmit](standalonelodgementsubmit) request.
+Returns a list of options for `lodgementType` in the [StandaloneLodgementSubmit](#standalonelodgementsubmit) request.
 
 These are all the Standalone Lodgement Matrix Types.
 
