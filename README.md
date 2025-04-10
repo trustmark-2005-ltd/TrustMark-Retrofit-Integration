@@ -465,6 +465,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteeStartDate |  |
 | - guaranteePolicyReference |  |
 | - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct.. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
+| - flexiOrbCertificateReference | Required if the measure is Flexi-Orb. Will validate the provided value against the Flexi-Orb database |
 | workInvoiceTotal                  | Decimal |
 | customerContribution              | Decimal  |
 | supportingDocumentAttachments [] | Array of supporting documents |
@@ -718,6 +719,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - guaranteeStartDate              |  |
 | - guaranteePolicyReference        |  |
 | - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
+| - flexiOrbCertificateReference    | Required if the measure is Flexi-Orb. Will validate the provided value with Flexi-Orb. |
 | - whdReplaceWhatMeasure             | Required for lodgementType WHD. Must be a value from taxonomy [WHDReplaceWhatMeasureValues](#whdreplacewhatmeasurevalues) |
 | - whdWorkConducted                  | Required for lodgementType WHD. Must be a value from taxonomy [WHDWorkConductedValues](#whdworkconductedvalues) |
 | supportingDocumentAttachments []  | Array of supporting documents |
