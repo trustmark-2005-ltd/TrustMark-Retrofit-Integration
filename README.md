@@ -44,7 +44,7 @@ Payable by the party signing the Data Sharing Agreement.
 | Service                  | Fee (+VAT)               | Notes                                                            |
 | ------------------------ | ------------------------ | ---------------------------------------------------------------- |
 | Setup                    | £1500                    |                                                                  |
-| Annual Service Charge    | £1500                    |  Annual increase capped at RPI +3%                               |
+| Annual Service Charge    | £1500                    |  Annual increase capped at CPI +3%                               |
 | Price per activity       | 1.5% of transaction cost |  Calculated monthly based upon lodgement fees payable to TrustMark by the lodging party |
 
 
@@ -92,7 +92,7 @@ A version value of `2022-04-01` should be supplied.
 
 ### ClientRequestToken
 
-A unique token to be provided by you to identify the request, these will expire after 10 minutes.
+A unique token to be provided by you to identify the request, these will expire after 10 minutes. Use to ensure that the request is idempotent.
 
 ### Identity
 
@@ -394,7 +394,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - - improvementOptionEvaluationMeasureReferences [] | | An array of values from `improvementOptionEvaluations.measuresEvaluated.yourReference` from the improvementOptionEvaluation with `isMediumTermPlanBase` is true |
 | riskAssessment | 2019 only |  |
 | - declaredProjectRisk | | Value from the taxonomy [DeclaredProjectRiskTypes](#declaredprojectrisktypes) |
-| - highestRiskCombination | | Value from the taxonomy [HighestRiskCombinationTypes](#highestriskcombinationtypes) |
+| - highestRiskCombination | | Value from the taxonomy [HighestRiskCombinationsTypes](#highestriskcombinationstypes) |
 | - installerQualityAssuranceClaimed | | true, false, null |
 | retrofitDesigns [] | | |
 | - isRegisteredWithTrustmark | | true if the designer is registered with TrustMark; otherwise false |
@@ -421,7 +421,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - documentType | | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | | Optional string |
 | notes [] | | Optional array of strings |
-| highRiskQuestions                 | | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example. |
+| highRiskQuestions                 | | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example.<br/> Required for projectType ORP3 to identify the Social Housing Landlord. |
 | - question                        | | Question string provided by the taxonomy |
 | - answer                          | | Answer string from the potential answer options provided by the taxonomy |
 
@@ -663,7 +663,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 
 | Field                             | Information                              |
 | --------------------------------- | ---------------------------------------- |
-| lodgementType | Value from the taxonomy [LodgementTypes](#lodgementtypes) |
+| lodgementType | Value from the taxonomy [StandaloneLodgementTypes](#standalonelodgementtypes) |
 | yourProjectReference              | Your reference for the project |
 | address                           |  |
 | - number                          |  |
@@ -1000,9 +1000,9 @@ Returns a list of options for `context.exposureZone` in the [AssessmentSubmit](#
 
 Returns a list of guarantee types for which the `name` value can be used with the `measures.guaranteeName` in the LodgementSubmit request.
 
-#### HighestRiskCombinationTypes
+#### HighestRiskCombinationsTypes
 
-> GET /Taxonomies/HighestRiskCombinationTypes
+> GET /Taxonomies/HighestRiskCombinationsTypes
 
 Returns a list of options for `riskAssessment.highestRiskCombination` in the [ProjectStart](#projectstart) request.
 
@@ -1012,11 +1012,7 @@ Returns a list of options for `riskAssessment.highestRiskCombination` in the [Pr
 
 Returns a list of innovation measure types for which a value from `approvedProducts` can be used with the `measures.innovationMeasureProduct` in the LodgementSubmit request.
 
-#### LodgementTypes
-
-> GET /Taxonomies/LodgementTypes
-
-Returns a list of options for `lodgementType` in the [Standalone Lodgements](#standalonelodgementsubmit) request.
+Innovation measure can only exist on ECO or GBIS lodgements. You can find more info [https://www.ofgem.gov.uk/](https://www.ofgem.gov.uk/search?keyword=innovation%20measures)
 
 #### LocalAuthorityProjectsHUG
 
@@ -1168,7 +1164,7 @@ Returns a list of options for `schemeId` in the [ProjectStart](#projectstart) re
 
 #### StandaloneLodgementTypes
 
-Returns a list of options for `lodgementType` in the [StandaloneLodgementSubmit](standalonelodgementsubmit) request.
+Returns a list of options for `lodgementType` in the [StandaloneLodgementSubmit](#standalonelodgementsubmit) request.
 
 These are all the Standalone Lodgement Matrix Types.
 
@@ -1313,7 +1309,9 @@ You can request an API Key to use the `TradeCheck Service` provided by TrustMark
 
 ### Endpoints
 
-UAT Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
+UAT Swagger: https://api.uat.trades.data-hub.org.uk/swagger/index.html
+
+Sandbox Swagger: https://api.sandbox.trades.data-hub.org.uk/swagger/index.html
 
 Production Swagger: https://api.trades.data-hub.org.uk/swagger/index.html
 
