@@ -180,16 +180,10 @@
       }
     ],
     "roles": {
-      "installers": [
-        {
-          "tmln": "string",
-          "registeredCompanyName": "string"
-        }
+      "installerTMLNs": [
+        "string"
       ],
-      "evaluator": {
-        "tmln": "string",
-        "registeredCompanyName": "string"
-      }
+      "evaluatorTMLN": "string"
     },
     "supportingDocumentAttachments": [
       {
