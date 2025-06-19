@@ -84,7 +84,8 @@
         "guaranteeName": "TrustMark Framework Section 10 Compliant",
         "guaranteeStartDate": "2023-01-20",
         "guaranteeTerm": "string",
-        "guaranteePolicyReference": "string"
+        "guaranteePolicyReference": "string",
+        "flexiOrbCertificateReference": "string",
       }
     ],
     "supportingDocumentAttachments": [

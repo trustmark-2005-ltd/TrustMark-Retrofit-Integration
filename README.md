@@ -250,8 +250,20 @@ The owner of the Assessment must have enough credit to cover any fees for this t
 | - siteAccessNotes                 | | Optional string |
 | - statutoryLimitations []         | | Array of strings with values from the taxonomy [StatutoryLimitationTypes](#statutorylimitationtypes)  |
 | - statutoryLimitationsComment     | | Optional string |
-| - isPublic     | | true / false. False means that the Assesment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
+| - isPublic     | | true / false. False means that the Assessment is only accessible to the TMLN that created it. Public means that it can be retrieved by a Retrofit Coordinator who has been provided with both an assessmentReference and related PostCode  |
 
+### Assessment Visibility Upgrade
+
+> PUT /Data/AssessmentUpgradePublic
+
+Allows you to convert an existing Assessment from private visibility to public so that it can be used by any TMLN. This includes a charge.
+
+You must have a valid AssessmentReference and Postcode to successfully change the Retrofit Assessment to public visibility.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| assessmentReference               | The Assessment Reference as generated when the assessment was submitted or provided to you by a Retrofit Assessor |
+| postcode                          | The Property Postcode from the RdSAP file submitted with the Retrofit Assessment when submitted or provided to you by a Retrofit Assessor |
 
 ### Assessment
 
@@ -465,6 +477,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - guaranteeStartDate |  |
 | - guaranteePolicyReference |  |
 | - mcsCertificateReference | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct.. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
+| - flexiOrbCertificateReference | Required if the measure is Flexi-Orb. Will validate the provided value against the Flexi-Orb database |
 | workInvoiceTotal                  | Decimal |
 | customerContribution              | Decimal  |
 | supportingDocumentAttachments [] | Array of supporting documents |
@@ -718,6 +731,7 @@ Creates a project and single lodgement submission in a single API call. This is 
 | - guaranteeStartDate              |  |
 | - guaranteePolicyReference        |  |
 | - mcsCertificateReference         | Required if the measure is MCS. Will validate the provided value against the MCS database, checking the technology and postcode are correct. See [MCSCertificate](#mcscertificate) about certificate 'warming' |
+| - flexiOrbCertificateReference    | Required if the measure is Flexi-Orb. Will validate the provided value with Flexi-Orb. |
 | - whdReplaceWhatMeasure             | Required for lodgementType WHD. Must be a value from taxonomy [WHDReplaceWhatMeasureValues](#whdreplacewhatmeasurevalues) |
 | - whdWorkConducted                  | Required for lodgementType WHD. Must be a value from taxonomy [WHDWorkConductedValues](#whdworkconductedvalues) |
 | supportingDocumentAttachments []  | Array of supporting documents |
@@ -1246,6 +1260,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [PAS2023 Project Example](./example-project-eco4-pas2023.md)
 
 * [Assessment Example](./ReadmeIntegration-example-assessment.md)
+
+* [Assessment Visibility Upgrade Example](./ReadmeIntegration-example-assessment-visibility-upgrade.md)
 
 * [Project Example](./ReadmeIntegration-example-project.md)
 
