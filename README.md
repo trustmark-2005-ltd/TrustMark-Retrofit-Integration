@@ -317,7 +317,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - propertyConstruction [] | | Array of values from the taxonomy [PropertyConstructionTypes] |
 | - propertyBedrooms | | Value from the taxonomy PropertyBedroomTypes |
 | assessmentDefects [] | | Array of assessment defects being covered in the project |
-| - defectId | | The defectId as listed in the Assessment |
+| - defectId | | The defectId as listed in the Assessment, or you can also provide the 'YourReference' to locate the original Assessment Defect |
 | - actualRepairCost | |  |
 | - toBeAddressedInProject | | true / false  |
 | projectDefects [] | | Array of new defects that have been identified at project stage |
