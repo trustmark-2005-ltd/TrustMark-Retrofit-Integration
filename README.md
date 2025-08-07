@@ -465,6 +465,8 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - installerPasCertificateNumber |  |
 | - operativeName |  |
 | - operativeCertificationReference |  |
+| - isSubcontractorInstall | true / false  |
+| - subcontractorBusinessName |  |
 | - isInnovationMeasure | true / false |
 | - innovationMeasureProduct | Value from the taxonomy [InnovationMeasureTypes](#innovationmeasuretypes) |
 | - productManufacturer |  |
