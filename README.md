@@ -433,9 +433,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - documentType | | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | | Optional string |
 | notes [] | | Optional array of strings |
-| highRiskQuestions                 | | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example.<br/> Required for projectType ORP3 to identify the Social Housing Landlord.
-<br/>
-Optional for projectType ECO4 and GBIS is the Smart Meter Consumer Pledge question. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). |
+| highRiskQuestions                 | | Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). See SHDF project example.<br/> Required for projectType ORP3 to identify the Social Housing Landlord. <br/><br/> Optional for projectType ECO4 and GBIS is the Smart Meter Consumer Pledge question. Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions). |
 | - question                        | | Question string provided by the taxonomy |
 | - answer                          | | Answer string from the potential answer options provided by the taxonomy |
 
@@ -1146,7 +1144,7 @@ These are all the Project Matrix Types.
 
 > GET /Taxonomies/ProjectQuestions
 
-Returns a list of required questions and their answer options for `highRiskQuestions` in the ProjectStart request.
+Returns a list of required questions and their answer options for `highRiskQuestions` in the [ProjectStart](#projectstart) request.
 
 #### PropertyAgeTypes
 
