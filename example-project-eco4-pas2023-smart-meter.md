@@ -198,11 +198,11 @@
     "notes": [
       "string"
     ], 
-        "highRiskQuestions": [
-            {
-            "question": "I confirm that I gave the Smart Meter Consumer Pledge to the household",
-                "answer": "The consumer accepted the pledge"
-        }
-        ]
+    "highRiskQuestions": [
+      {
+        "question": "I confirm that I gave the Smart Meter Consumer Pledge to the household",
+        "answer": "The consumer accepted the pledge"
+      }
+    ]
   }
 }
