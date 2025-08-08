@@ -1,6 +1,7 @@
 ### Smart Meter Pledge Project Example
 
-[Return](./ReadmeIntegration.md)
+[Return
+](./ReadmeIntegration.md)
 
 ```json
 {
@@ -8,7 +9,7 @@
   "identity": {
     "trustmarkId": "api-e5b3e97b-b95e-467f-b082-60fcab47ec6d"
   },
-  "clientRequestToken" : "2341716e-23fc-4d6f-b833-f945aa6f5a36",
+  "clientRequestToken": "2341716e-23fc-4d6f-b833-f945aa6f5a36",
   "request": {
     "assessmentReference": "A31457",
     "ownerTMLN": "10000",
@@ -60,8 +61,8 @@
       }
     ],
     "intendedOutcomes": {
-            "improveResilienceToClimateChange": false,
-            "improveManagementOfMoisture": false,
+      "improveResilienceToClimateChange": false,
+      "improveManagementOfMoisture": false,
       "reductionEnergyUse": true,
       "reductionInEnergyCosts": true,
       "reductionsInEmissions": true,
@@ -97,13 +98,13 @@
             "repaymentYears": 2,
             "annualCO2Savings": 2,
             "carbonCostEffectiveness": 1,
-                        "productInstalledUnitOfMeasure": "Items",
-                        "ProductInstalledValue": 1
+            "productInstalledUnitOfMeasure": "Items",
+            "ProductInstalledValue": 1
           }
         ],
         "intendedOutcomes": {
-                    "improveResilienceToClimateChange": false,
-                    "improveManagementOfMoisture": false,
+          "improveResilienceToClimateChange": false,
+          "improveManagementOfMoisture": false,
           "reductionEnergyUse": true,
           "reductionInEnergyCosts": true,
           "reductionsInEmissions": true,
@@ -175,29 +176,28 @@
         "comments": "string",
         "filename": "file.pdf"
       },
-                  {
+      {
         "fileUploadToken": "rac-3ed904f7-853c-4975-8d07-afa5b58a5efft20250804t84a1a40b488f40b7b58528eac776a0e2t133987901253989518",
         "documentType": "Medium term improvement plan",
         "comments": "string",
         "filename": "file.pdf"
       },
-                  {
+      {
         "fileUploadToken": "rac-3ed904f7-853c-4975-8d07-afa5b58a5efft20250804t84a1a40b488f40b7b58528eac776a0e2t133987901253989518",
         "documentType": "Improvement option evaluation",
         "comments": "string",
         "filename": "file.pdf"
       },
-             {
+      {
         "fileUploadToken": "rac-3ed904f7-853c-4975-8d07-afa5b58a5efft20250804t84a1a40b488f40b7b58528eac776a0e2t133987901253989518",
         "documentType": "Retrofit design",
         "comments": "string",
         "filename": "file.pdf"
       }
-            
     ],
     "notes": [
       "string"
-    ], 
+    ],
     "highRiskQuestions": [
       {
         "question": "I confirm that I gave the Smart Meter Consumer Pledge to the household",
