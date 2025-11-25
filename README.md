@@ -433,7 +433,7 @@ The owner of the Project must have enough credit to cover any fees for this tran
 | - documentType | | Value from the taxonomy [DocumentTypes](#documenttypes) |
 | - comments | | Optional string |
 | notes [] | | Optional array of strings |
-| highRiskQuestions                 | | Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions).<br/><br/>* Required for projectType SHDF with `localAuthorityProjectPhase` of  `SHDF (Wave 2.1)`. See SHDF project example.<br/><br/>* Required for projectType ORP3 to identify the Social Housing Landlord. <br/><br/>* Required for projectType ECO4 and GBIS is the Smart Meter Consumer Pledge question.<br/><br/>* Required for projectType WHD to identify further building information. |
+| highRiskQuestions                 | | Must contain array of all questions from taxonomy [ProjectQuestions](#projectquestions).<br/><br/>* Required for projectType SHDF with `localAuthorityProjectPhase` of `SHDF (Wave 2.1)` to identify Digital Uplift. See SHDF project example.<br/><br/>* Required for projectType ORP3 to identify the Social Housing Landlord. <br/><br/>* Required for projectType ECO4 and GBIS is the Smart Meter Consumer Pledge question.<br/><br/>* Required for projectType WHD to identify further building information. |
 | - question                        | | Question string provided by the taxonomy |
 | - answer                          | | Answer string from the potential answer options provided by the taxonomy |
 
