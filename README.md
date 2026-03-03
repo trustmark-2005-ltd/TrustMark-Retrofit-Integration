@@ -916,6 +916,78 @@ In order to use MCS measures you must provide an MCS Certificate Reference that 
 `MCS-01109079-R` is a valid testing mcsCertificateReference value and must match against a postcode of `IP7 6RL` and an MCS technology of `2`, for example `DW-305` would be a valid measure type.
 
 
+### CertificationBodyAuditSubmit
+
+> POST /Data/CertificationBodyAuditSubmit
+
+Allows a Certification Body to submit a new audit against a Retrofit Project, generating a `certificationBodyAuditId`.
+
+> [!NOTE]
+> You will need an API Key created by an installer scheme to use this endpoint.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| retrofitProjectId | The Id of the Retrofit Project to associate the audit with |
+| certificationBodyAuditType | The type of audit being submitted |
+
+### CertificationBodyAuditAmend
+
+> PUT /Data/CertificationBodyAuditAmend
+
+Amends an existing Certification Body Audit. Allows updating of the audit status, associated measures and evidence uploads.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| retrofitProjectId | The Id of the Retrofit Project the audit is associated with |
+| certificationBodyAuditId | The audit Id as returned from the CertificationBodyAuditSubmit call |
+| certificationBodyAuditType | The type of audit |
+| status | Current status of the audit e.g. `In Progress` |
+| measures [] | Array of measures under audit |
+| - lodgementId | The lodgement Id the measure belongs to |
+| - umr | The UMR of the measure |
+| - installerTMLN | The TMLN of the installer |
+| - installerBusinessName | The name of the installer business |
+| - installerSchemeId | The scheme Id the installer is registered with |
+| - measureType | Description of the measure type |
+| - auditAppointmentStatus | Status of the audit appointment e.g. `Booked` |
+| - inspectionDate | ISO 8601 datetime of the scheduled inspection |
+| evidenceUploads [] | Array of file upload tokens for evidence documents. See [FileUploadToken](#fileuploadtoken) |
+
+### CertificationBodyAudit
+
+> POST /Data/CertificationBodyAudit
+
+Retrieves a single Certification Body Audit by its Id.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| retrofitProjectId | The Id of the Retrofit Project the audit is associated with |
+| certificationBodyAuditId | The audit Id to retrieve |
+
+### CertificationBodyAudits
+
+> POST /Data/CertificationBodyAudits
+
+Retrieves all Certification Body Audits associated with a Retrofit Project.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| retrofitProjectId | The Id of the Retrofit Project to retrieve all audits for |
+
+### CertificationBodyAuditDelete
+
+> DELETE /Data/CertificationBodyAuditDelete
+
+Deletes a Certification Body Audit.
+
+| Field                             | Information                              |
+| :-------------------------------- | ---------------------------------------- |
+| retrofitProjectId | The Id of the Retrofit Project the audit is associated with |
+| certificationBodyAuditId | The audit Id to delete |
+
+For example requests see [CertificationBodyAudit Examples](./ReadmeIntegration-example-certificationbodyaudit.md).
+
+
 ### Taxonomies
 
 #### CombustionVentilationAcceptableTypes
@@ -1302,6 +1374,8 @@ If you'd like to visualise the data [JSON Visio (jsonvisio.com)](https://jsonvis
 * [ProjectAmend Example](./ReadmeIntegration-example-projectamend.md)
 
 * [UPRN Check Example](./ReadmeIntegration-example-uprn-check-example.md)
+
+* [CertificationBodyAudit Example](./ReadmeIntegration-example-certificationbodyaudit.md)
 
 ## Certificates
 
