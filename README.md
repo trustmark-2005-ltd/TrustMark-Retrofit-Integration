@@ -940,8 +940,7 @@ Amends an existing Certification Body Audit. Allows updating of the audit status
 | :-------------------------------- | ---------------------------------------- |
 | retrofitProjectId | The Id of the Retrofit Project the audit is associated with |
 | certificationBodyAuditId | The audit Id as returned from the CertificationBodyAuditSubmit call |
-| certificationBodyAuditType | The type of audit |
-| status | Current status of the audit e.g. `In Progress` |
+| status | Current status of the audit e.g. `New` |
 | measures [] | Array of measures under audit |
 | - lodgementId | The lodgement Id the measure belongs to |
 | - umr | The UMR of the measure |
@@ -949,8 +948,24 @@ Amends an existing Certification Body Audit. Allows updating of the audit status
 | - installerBusinessName | The name of the installer business |
 | - installerSchemeId | The scheme Id the installer is registered with |
 | - measureType | Description of the measure type |
-| - auditAppointmentStatus | Status of the audit appointment e.g. `Booked` |
 | - inspectionDate | ISO 8601 datetime of the scheduled inspection |
+| - measureFirstTimeOutcome | Measure First Time Outcome |
+| - auditAppointmentStatus | Status of the audit appointment e.g. `Booked` |
+| - dateRegisteredBusiness | Date registered business / retrofit coordinator notified of audit outcome |
+| - remediationStatus | Remediation Status |
+| - signOffRemediationDate | Date Remediation fully signed off |
+| - remediationStatus | Remediation Status |
+| - hasCat1MadeSafe | Have CAT1s been made safe? e.g. `Yes` |
+| - cat1TotalNonCompliances | Number of Non-Compliances total |
+| - cat1OpenNonCompliances | Number of Non-Compliances open |
+| - cat1TotalNonCompliances | Number of Non-Compliances major total |
+| - majorOpenNonCompliances | Number of Non-Compliances major open |
+| - minorTotalNonCompliances | Number of Non-Compliances minor total |
+| - minorOpenNonCompliances | Number of Non-Compliances minor open |
+| - minorTotalNonCompliancesNoAffect | Number of Non-Compliances minor no affect total |
+| - minorTotalNonCompliancesNoAffect | Number of Non-Compliances minor no affect open |
+| - updatedAt | Datatime of update |
+| - installerSchemeName | The name of the installer scheme |
 | evidenceUploads [] | Array of file upload tokens for evidence documents. See [FileUploadToken](#fileuploadtoken) |
 
 ### CertificationBodyAudit
