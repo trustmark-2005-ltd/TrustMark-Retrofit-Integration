@@ -1334,7 +1334,7 @@ Returns the list of questions that must be provided for WHD standalone lodgement
 
 ## RdSAP Files
 
-RdSAP files are required at Assessment and Project Completion stages. The xml content of the file must be supplied in the fields, if you are exploring the API and need an online tool to escape characters then https://www.freeformatter.com/json-escape.html works well.
+RdSAP files are required at Assessment and Project Completion stages. The xml content of the file must be supplied in the fields, if you are exploring the API and need an online tool to escape characters then https://jsonviewertool.com/json-escape works well.
 
 TrustMark is not responsible for external websites and their functionality or security, we advise that only non-personal test data is used with any of the tools listed.
 
